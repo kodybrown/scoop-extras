@@ -1,9 +1,9 @@
 {
     "homepage": "https://atom.io/",
-    "version": "0.152.0",
+    "version": "0.153.0",
     "license": "MIT",
-    "url": "https://github.com/atom/atom/releases/download/v0.152.0/atom-windows.zip",
-    "hash": "ee79f41342db4e4eab3e94b095efda27054f0c053bd9ae0f08f5af1bc4226b31",
+    "url": "https://github.com/atom/atom/releases/download/v0.153.0/atom-windows.zip",
+    "hash": "2B928C62905D610381C26B4F091C94BC8FD392D4770A65AE96D17A65DF2E7739",
     "extract_dir": "Atom",
     "bin": [
         "atom.exe",
