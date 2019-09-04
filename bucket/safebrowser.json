@@ -1,0 +1,33 @@
+{
+    "version": "0.14.1",
+    "description": "SAFE Browser Application",
+    "homepage": "https://github.com/maidsafe/safe_browser",
+    "license": "BSD-3-Clause|MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/maidsafe/safe_browser/releases/download/v0.14.1/safe-browser-v0.14.1-win-x64.zip",
+            "hash": "0098663b20143ae82514cbef202c540333d7c37fdc136749f2e1a810ee7032f0",
+            "extract_dir": "safe-browser-v0.14.1-win-x64"
+        }
+    },
+    "bin": "SAFE Browser.exe",
+    "shortcuts": [
+        [
+            "SAFE Browser.exe",
+            "SAFE Browser"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/maidsafe/safe_browser/releases/download/v$version/safe-browser-v$version-win-x64.zip",
+                "hash": {
+                    "url": "https://github.com/maidsafe/safe_browser/releases/tag/v$version",
+                    "regex": "SAFE Browser builds SHA-256 checksum:(?:.|\\n)*Windows\\n$sha256"
+                },
+                "extract_dir": "safe-browser-v$version-win-x64"
+            }
+        }
+    }
+}

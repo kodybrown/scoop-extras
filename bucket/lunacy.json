@@ -1,0 +1,31 @@
+{
+    "homepage": "https://icons8.com/lunacy",
+    "description": "Free graphic design software that works offline and supports .sketch files.",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://docs.icons8.com/lunacy%20license.md"
+    },
+    "version": "4.1.0",
+    "url": "https://desktop.icons8.com/lunacy/LunacySetup_4.1.0.exe",
+    "hash": "bb56f7b83723576b89f7ed0b838722909602c689902925d32826aae7cae5673c",
+    "bin": [
+        [
+            "Lunacy.exe",
+            "lunacy"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "Lunacy.exe",
+            "Lunacy"
+        ]
+    ],
+    "innosetup": true,
+    "checkver": {
+        "url": "https://docs.icons8.com/release-notes/",
+        "re": ">([\\d.]+)</h2>"
+    },
+    "autoupdate": {
+        "url": "https://desktop.icons8.com/lunacy/LunacySetup_$version.exe"
+    }
+}

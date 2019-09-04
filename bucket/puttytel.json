@@ -1,0 +1,36 @@
+{
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+    "description": "a Telnet-only client that is not included in putty all-in-one archive/installer",
+    "version": "0.72",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://the.earth.li/~sgtatham/putty/latest/w64/puttytel.exe",
+            "hash": "e5acfa45efb5f5e6c92b91911af1c7e28d867bc5e5fa619251e51cf801373186"
+        },
+        "32bit": {
+            "url": "https://the.earth.li/~sgtatham/putty/latest/w32/puttytel.exe",
+            "hash": "8642d7719a47ac729eba80fc8a6a4ecf3f35dccdaa86aef3a4365e3270e10c25"
+        }
+    },
+    "bin": "puttytel.exe",
+    "checkver": "The latest version is ([\\d.]+)\\.",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://the.earth.li/~sgtatham/putty/latest/w64/puttytel.exe",
+                "hash": {
+                    "url": "https://the.earth.li/~sgtatham/putty/latest/sha512sum",
+                    "find": "([a-f0-9]{128})\\s+w64/puttytel.exe"
+                }
+            },
+            "32bit": {
+                "url": "https://the.earth.li/~sgtatham/putty/latest/w32/puttytel.exe",
+                "hash": {
+                    "url": "https://the.earth.li/~sgtatham/putty/latest/sha512sum",
+                    "find": "([a-f0-9]{128})\\s+w32/puttytel.exe"
+                }
+            }
+        }
+    }
+}

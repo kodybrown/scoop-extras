@@ -1,0 +1,40 @@
+{
+    "version": "4.2.3",
+    "description": "Native desktop application for Mattermost.",
+    "homepage": "https://mattermost.com/",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-win64.zip",
+            "hash": "7e395bd776e19484985c5b857a8648c777ac1539f55ddfbdcf77cd05e3358218"
+        },
+        "32bit": {
+            "url": "https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-win32.zip",
+            "hash": "d2138ab8fceae7345b82e74875ffafbf4de0e4efb1007e5098e29a7396530cf1"
+        }
+    },
+    "bin": "Mattermost.exe",
+    "shortcuts": [
+        [
+            "Mattermost.exe",
+            "Mattermost"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/mattermost/desktop/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://releases.mattermost.com/desktop/$version/mattermost-desktop-$version-win64.zip"
+            },
+            "32bit": {
+                "url": "https://releases.mattermost.com/desktop/$version/mattermost-desktop-$version-win32.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/mattermost/desktop/releases/tag/v$version",
+            "regex": "(?sm)$basename</a>\\s*<ul>\\s*<li>SHA-256 Checksum: <code>$sha256"
+        }
+    }
+}

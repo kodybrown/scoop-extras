@@ -1,0 +1,51 @@
+{
+    "version": "0.18.1",
+    "description": "The command line client for IBM Cloud.",
+    "homepage": "https://github.com/IBM-Bluemix/bluemix-cli-release",
+    "license": {
+        "identifier": "Proprietary",
+        "url": "https://console.ng.bluemix.net/docs/navigation/notices.html"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://clis.ng.bluemix.net/download/bluemix-cli/0.18.1/win64/archive#/dl.zip",
+            "hash": "sha1:9577484ba3296992633fdf15bbc97f3b3e1f88ee"
+        },
+        "32bit": {
+            "url": "https://clis.ng.bluemix.net/download/bluemix-cli/0.18.1/win32/archive#/dl.zip",
+            "hash": "sha1:c6926113a2c482c603041671bce189a620b10e40"
+        }
+    },
+    "extract_dir": "IBM_Cloud_CLI",
+    "bin": [
+        "ibmcloud.exe",
+        [
+            "ibmcloud.exe",
+            "bluemix"
+        ],
+        [
+            "ibmcloud.exe",
+            "bx"
+        ],
+        "ibmcloud-analytics.exe"
+    ],
+    "env_set": {
+        "IBMCLOUD_HOME": "$dir\\config"
+    },
+    "persist": "config",
+    "post_install": "ibmcloud plugin update --all",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://clis.ng.bluemix.net/download/bluemix-cli/$version/win64/archive#/dl.zip"
+            },
+            "32bit": {
+                "url": "https://clis.ng.bluemix.net/download/bluemix-cli/$version/win32/archive#/dl.zip"
+            }
+        },
+        "hash": {
+            "url": "$url/checksum"
+        }
+    }
+}

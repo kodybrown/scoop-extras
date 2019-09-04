@@ -1,0 +1,62 @@
+{
+    "version": "6.3.0.4",
+    "description": "Powerful office suite.",
+    "homepage": "https://libreoffice.org/",
+    "license": "MPL-2.0",
+    "suggest": {
+        "Visual C++ Redistributable for Visual Studio 2015": "vcredist2015"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/6.3.0.4/win/x86_64/LibreOffice_6.3.0.4_Win_x64.msi",
+            "hash": "de737d843c5920970768f99de18a1cbd53bdafc6510ce6113de564e5e3895a53"
+        },
+        "32bit": {
+            "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/6.3.0.4/win/x86/LibreOffice_6.3.0.4_Win_x86.msi",
+            "hash": "ff9dd736087f5e20f34b83cd595e2489038b9eaa15a5d6a834673c1a07d23cd8"
+        }
+    },
+    "shortcuts": [
+        [
+            "program\\sbase.exe",
+            "LibreOffice\\LibreOffice Base"
+        ],
+        [
+            "program\\scalc.exe",
+            "LibreOffice\\LibreOffice Calc"
+        ],
+        [
+            "program\\sdraw.exe",
+            "LibreOffice\\LibreOffice Draw"
+        ],
+        [
+            "program\\simpress.exe",
+            "LibreOffice\\LibreOffice Impress"
+        ],
+        [
+            "program\\smath.exe",
+            "LibreOffice\\LibreOffice Math"
+        ],
+        [
+            "program\\swriter.exe",
+            "LibreOffice\\LibreOffice Writer"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.libreoffice.org/download/download/",
+        "regex": "libreoffice-([\\d\\.]+)\\.tar\\.xz"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/$version/win/x86_64/LibreOffice_$version_Win_x64.msi"
+            },
+            "32bit": {
+                "url": "https://downloadarchive.documentfoundation.org/libreoffice/old/$version/win/x86/LibreOffice_$version_Win_x86.msi"
+            }
+        },
+        "hash": {
+            "mode": "metalink"
+        }
+    }
+}

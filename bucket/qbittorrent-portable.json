@@ -1,0 +1,54 @@
+{
+    "homepage": "https://www.qbittorrent.org/",
+    "license": "GPL-2.0-only",
+    "version": "4.1.7",
+    "description": "Free and reliable P2P Bittorent client.",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.1.7/qbittorrent_4.1.7_x64_setup.exe#/dl.7z",
+            "hash": "8f336c26866cfc6322c5ad7b0a557fb896b31f93246dca7a187d8764f0b02fd1"
+        },
+        "32bit": {
+            "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.1.7/qbittorrent_4.1.7_setup.exe#/dl.7z",
+            "hash": "4ae69f2eabf6e27cdf06cdf090f40f834a04ecbf3bf2dd5a5edddfad4b3dcf1b"
+        }
+    },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninst.exe\" -Force -Recurse",
+    "bin": [
+        [
+            "qbittorrent.exe",
+            "qbittorrent",
+            "--portable"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "qbittorrent.exe",
+            "qBittorrent",
+            "--portable"
+        ]
+    ],
+    "persist": "profile",
+    "checkver": {
+        "url": "https://www.qbittorrent.org/download.php",
+        "re": "Latest:\\s+v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-$version/qbittorrent_$version_x64_setup.exe#/dl.7z",
+                "hash": {
+                    "url": "https://www.qbittorrent.org/download.php",
+                    "regex": "64-bit.*\\s+.*<code>$sha256</code>"
+                }
+            },
+            "32bit": {
+                "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-$version/qbittorrent_$version_setup.exe#/dl.7z",
+                "hash": {
+                    "url": "https://www.qbittorrent.org/download.php",
+                    "regex": "32-bit.*\\s+.*<code>$sha256</code>"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "version": "2019.09.03",
+    "description": "A XUL-based web-browser demonstrating the Unified XUL Platform (UXP). This browser is a close twin to pre-Servo Firefox in how it operates.",
+    "homepage": "https://www.basilisk-browser.org",
+    "license": {
+        "identifier": "MPL-2.0",
+        "url": "https://github.com/MoonchildProductions/UXP/blob/master/LICENSE"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "http://us.basilisk-browser.org/release/basilisk-latest.win64.installer.exe#/dl.7z",
+            "hash": "949ceed03f3247f796719f2a3d37ed6e3f181aa2eec572e196f759984703ac7d"
+        },
+        "32bit": {
+            "url": "http://us.basilisk-browser.org/release/basilisk-latest.win32.installer.exe#/dl.7z",
+            "hash": "f3425b3c310630a4c276649f2e50795a101e5de3e63b772c46d42403c1c21482"
+        }
+    },
+    "extract_dir": "core",
+    "bin": "basilisk.exe",
+    "shortcuts": [
+        [
+            "basilisk.exe",
+            "Basilisk"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.basilisk-browser.org/releasenotes.shtml",
+        "regex": "v([\\d.]+)\\s*</span>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "http://us.basilisk-browser.org/release/basilisk-latest.win64.installer.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "http://us.basilisk-browser.org/release/basilisk-latest.win32.installer.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "url": "https://www.basilisk-browser.org/download.shtml",
+            "find": "$basename:\\s+([a-f0-9]{64})"
+        }
+    }
+}

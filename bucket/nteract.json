@@ -1,0 +1,40 @@
+{
+    "homepage": "https://nteract.io/",
+    "version": "0.14.5",
+    "license": "BSD-3-Clause",
+    "description": "nteract and create with data, words, and visuals.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/nteract/nteract/releases/download/v0.14.5/nteract-setup-0.14.5.exe#/dl.7z",
+            "hash": "sha512:64461e3c576b3ddfa7e3618e0fadaee4916bba381b67717b03e2fce2dbf21ea470d904157bedc89a4066eed79fda6f05ed8932392088663263e97bd866885a34",
+            "installer": {
+                "script": [
+                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse",
+                    "info 'Installing Python3 kernel...'",
+                    "python3 -m pip install ipykernel",
+                    "python3 -m ipykernel install --user"
+                ]
+            }
+        }
+    },
+    "bin": "nteract.exe",
+    "shortcuts": [
+        [
+            "nteract.exe",
+            "nteract"
+        ]
+    ],
+    "depends": "python",
+    "checkver": {
+        "github": "https://github.com/nteract/nteract"
+    },
+    "autoupdate": {
+        "url": "https://github.com/nteract/nteract/releases/download/v$version/nteract-setup-$version.exe#/dl.7z",
+        "hash": {
+            "url": "$baseurl/latest.yml",
+            "regex": "sha512: $base64"
+        }
+    },
+    "notes": "Instructions for downloading more kernels can be found at: https://nteract.io/kernels"
+}

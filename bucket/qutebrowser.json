@@ -1,0 +1,32 @@
+{
+    "homepage": "https://www.qutebrowser.org/",
+    "description": "A keyboard-focused browser with a minimal GUI.",
+    "license": "GPL-3.0-only",
+    "version": "1.7.0",
+    "persist": "config",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v1.7.0/qutebrowser-1.7.0-windows-standalone-amd64.zip",
+            "hash": "04136020b84d1c51fe38c6d9e11f03c7b92f07506c75ae7815b91f79bdad6cab",
+            "extract_dir": "qutebrowser-1.7.0-x64"
+        }
+    },
+    "bin": "qutebrowser.exe",
+    "shortcuts": [
+        [
+            "qutebrowser.exe",
+            "qutebrowser"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/qutebrowser/qutebrowser"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v$version/qutebrowser-$version-windows-standalone-amd64.zip",
+                "extract_dir": "qutebrowser-$version-x64"
+            }
+        }
+    }
+}

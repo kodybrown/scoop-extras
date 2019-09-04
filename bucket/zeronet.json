@@ -1,0 +1,36 @@
+{
+    "homepage": "https://zeronet.io/",
+    "version": "45786880cbe61a5bc70b9eef7e52951c4fe3df28",
+    "license": "GPL-2.0-only",
+    "description": "Decentralized websites using Bitcoin crypto and BitTorrent network",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/HelloZeroNet/ZeroNet-win/archive/45786880cbe61a5bc70b9eef7e52951c4fe3df28.zip",
+            "hash": "8d7e51fba2be34c2ee475e4cc07f5ea759182d893f4de4fc7e3722261b10b762",
+            "extract_dir": "ZeroNet-win-45786880cbe61a5bc70b9eef7e52951c4fe3df28"
+        }
+    },
+    "bin": "ZeroNet.exe",
+    "shortcuts": [
+        [
+            "ZeroNet.exe",
+            "ZeroNet"
+        ]
+    ],
+    "persist": [
+        "data",
+        "log"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/HelloZeroNet/ZeroNet-win/branches",
+        "jsonpath": "$[?(@.name == 'dist-win64')].commit.sha"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/HelloZeroNet/ZeroNet-win/archive/$version.zip",
+                "extract_dir": "ZeroNet-win-$version"
+            }
+        }
+    }
+}

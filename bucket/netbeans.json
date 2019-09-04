@@ -1,0 +1,37 @@
+{
+    "version": "11.1",
+    "homepage": "https://netbeans.org",
+    "description": "Quickly and easily develop desktop, mobile, and web applications with Java, JavaScript, HTML5, PHP, C/C++ and more.",
+    "license": "Apache-2.0",
+    "url": "https://www.apache.org/dist/netbeans/netbeans/11.1/netbeans-11.1-bin.zip",
+    "hash": "sha512:bb061b9258d524b7b53b3b5ee9aa95111f7a391a5e2c5c0bc949164166af9a03d0cebbde2b47a8853fb765307b4c93ce8389a9c87bef26c92c08cdf446314e4d",
+    "extract_dir": "netbeans",
+    "architecture": {
+        "64bit": {
+            "shortcuts": [
+                [
+                    "bin/netbeans64.exe",
+                    "Netbeans"
+                ]
+            ]
+        },
+        "32bit": {
+            "shortcuts": [
+                [
+                    "bin/netbeans.exe",
+                    "Netbeans"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "url": "https://netbeans.apache.org/download/index.html",
+        "regex": "\\(NB ([\\d.]+)\\)</h2>"
+    },
+    "autoupdate": {
+        "url": "https://www.apache.org/dist/netbeans/netbeans/$version/netbeans-$version-bin.zip",
+        "hash": {
+            "url": "$url.sha512"
+        }
+    }
+}

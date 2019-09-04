@@ -1,0 +1,56 @@
+{
+    "##": "Check chromium.woolyss.com for different versions of Chromium releases.",
+    "version": "76.0.3809.100-r665002",
+    "description": "Browser aiming for safer, faster, and more stable way for all users to experience the web.",
+    "license": "BSD-3-Clause",
+    "homepage": "https://www.chromium.org",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/macchrome/winchrome/releases/download/v76.0.3809.100-r665002-Win64/Chromium-76.0.3809.100-x64.7z",
+            "hash": "sha1:67fda51228441ec59bdbfa4de046f4ea4f4d551b",
+            "extract_dir": "Chromium-76.0.3809.100-x64"
+        },
+        "32bit": {
+            "url": "https://github.com/macchrome/winchrome/releases/download/v76.0.3809.100-r665002-Win64/Chromium-76.0.3809.100-x86.7z",
+            "hash": "sha1:b3a9c7bfaf220ba2f0868047e1043b74246a9c96",
+            "extract_dir": "Chromium-76.0.3809.100-x86"
+        }
+    },
+    "bin": [
+        "chrome.exe",
+        [
+            "chrome.exe",
+            "chromium"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "chrome.exe",
+            "Chromium"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/macchrome/winchrome",
+        "regex": "v([\\d.]+-r\\d+)-Win64"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/macchrome/winchrome/releases/download/v$version-Win64/Chromium-$matchHead.$buildVersion-x64.7z",
+                "hash": {
+                    "url": "https://github.com/macchrome/winchrome/releases/v$version-Win64",
+                    "regex": "(?sm)$basename \\(64-bit\\)<br>\\nSHA1 $sha1</p>"
+                },
+                "extract_dir": "Chromium-$matchHead.$buildVersion-x64"
+            },
+            "32bit": {
+                "url": "https://github.com/macchrome/winchrome/releases/download/v$version-Win64/Chromium-$matchHead.$buildVersion-x86.7z",
+                "hash": {
+                    "url": "https://github.com/macchrome/winchrome/releases/v$version-Win64",
+                    "regex": "(?sm)$basename \\(32-bit\\)<br>\\nSHA1 $sha1</p>"
+                },
+                "extract_dir": "Chromium-$matchHead.$buildVersion-x86"
+            }
+        }
+    }
+}

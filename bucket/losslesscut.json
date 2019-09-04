@@ -1,0 +1,39 @@
+{
+    "homepage": "https://github.com/mifi/lossless-cut",
+    "description": "Save space by quickly and losslessly trimming video and audio files.",
+    "version": "2.4.0",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/mifi/lossless-cut/releases/download/v2.4.0/LosslessCut-win32-x64.zip",
+            "hash": "49cf1e1a250fab8dfd42f33ce4e7d4e1de19ebd29caa975ce579cf22e7dc130f",
+            "extract_dir": "LosslessCut-win32-x64"
+        },
+        "32bit": {
+            "url": "https://github.com/mifi/lossless-cut/releases/download/v2.4.0/LosslessCut-win32-ia32.zip",
+            "hash": "0f87bd29d44266f65f30ece2af766347b4d4e16fd9cd753f24bc75ee35252f0b",
+            "extract_dir": "LosslessCut-win32-ia32"
+        }
+    },
+    "shortcuts": [
+        [
+            "LosslessCut.exe",
+            "LosslessCut"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/mifi/lossless-cut"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/mifi/lossless-cut/releases/download/v$version/LosslessCut-win32-x64.zip",
+                "extract_dir": "LosslessCut-win32-x64"
+            },
+            "32bit": {
+                "url": "https://github.com/mifi/lossless-cut/releases/download/v$version/LosslessCut-win32-ia32.zip",
+                "extract_dir": "LosslessCut-win32-ia32"
+            }
+        }
+    }
+}

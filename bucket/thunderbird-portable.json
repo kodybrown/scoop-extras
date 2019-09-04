@@ -1,0 +1,54 @@
+{
+    "version": "68.0",
+    "description": "A free email application that’s easy to set up and customize.",
+    "homepage": "https://www.thunderbird.net/",
+    "license": "MPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://download.mozilla.org/?product=thunderbird-68.0-SSL&os=win64&lang=en-US#/dl.7z",
+            "hash": "sha512:09506d7226c0a878c01eeae75ae3a58910aab2996aea45f0d8cc1bdce251e50f996b47959d6dfed4c97fc89ade870b20ee29b5cabf6fcd0155475e92fd5a4504"
+        },
+        "32bit": {
+            "url": "https://download.mozilla.org/?product=thunderbird-68.0-SSL&os=win&lang=en-US#/dl.7z",
+            "hash": "sha512:23d5856ace3b81917a94dbeb73e7d8fd6fdbcd5b2ee51fa10f1bf2e4e6c1002033e7d28c7ebe0cbe05eb9a2b40f7de2158d65bcb5589b31e3e2ae8dea90d4141"
+        }
+    },
+    "extract_dir": "core",
+    "bin": [
+        [
+            "thunderbird.exe",
+            "thunderbird",
+            "-profile \"$dir\\profile\""
+        ]
+    ],
+    "shortcuts": [
+        [
+            "thunderbird.exe",
+            "Mozilla Thunderbird",
+            "-profile \"$dir\\profile\""
+        ]
+    ],
+    "persist": "profile",
+    "checkver": {
+        "url": "https://www.thunderbird.net/thunderbird/all/",
+        "regex": "thunderbird/([\\d.]+)/"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.mozilla.org/?product=thunderbird-$version-SSL&os=win64&lang=en-US#/dl.7z",
+                "hash": {
+                    "url": "https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/$version/SHA512SUMS",
+                    "regex": "$sha512\\s+(?:win64/en-US/Thunderbird Setup ([\\d.]+).exe)"
+                }
+            },
+            "32bit": {
+                "url": "https://download.mozilla.org/?product=thunderbird-$version-SSL&os=win&lang=en-US#/dl.7z",
+                "hash": {
+                    "url": "https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/$version/SHA512SUMS",
+                    "regex": "$sha512\\s+(?:win32/en-US/Thunderbird Setup ([\\d.]+).exe)"
+                }
+            }
+        }
+    }
+}

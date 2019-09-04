@@ -1,0 +1,39 @@
+{
+    "homepage": "https://keeweb.info/",
+    "description": "A cross-platform password manager compatible with KeePass.",
+    "version": "1.9.2",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/keeweb/keeweb/releases/download/v1.9.2/KeeWeb-1.9.2.win.x64.zip",
+            "hash": "d3ee0db4d709fe17847cdc64e8493dcb74b9d30afb7fe4db5a2895bc94102ae1"
+        },
+        "32bit": {
+            "url": "https://github.com/keeweb/keeweb/releases/download/v1.9.2/KeeWeb-1.9.2.win.ia32.zip",
+            "hash": "02c6375a390baeb83ea5aededdce3cc53adbe812b9663b2b797cdfda13a217d0"
+        }
+    },
+    "bin": "KeeWeb.exe",
+    "shortcuts": [
+        [
+            "KeeWeb.exe",
+            "KeeWeb"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/keeweb/keeweb"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/keeweb/keeweb/releases/download/v$version/KeeWeb-$version.win.x64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/keeweb/keeweb/releases/download/v$version/KeeWeb-$version.win.ia32.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/keeweb/keeweb/releases/download/v$version/Verify.sha256"
+        }
+    }
+}

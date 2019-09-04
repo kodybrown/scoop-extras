@@ -1,0 +1,29 @@
+{
+    "homepage": "https://calibre-ebook.com/",
+    "version": "3.47.1",
+    "description": "Powerful and easy to use e-book manager.",
+    "license": "GPL-3.0-only",
+    "url": "https://www.fosshub.com/Calibre.html/calibre-portable-installer-3.47.1.exe",
+    "hash": "b645114aa9674cb6f7f2e0e3511b6f69d0cd85ceab2c78eab405b3f400ba3f09",
+    "persist": [
+        "Calibre Portable/Calibre Library",
+        "Calibre Portable/Calibre Settings"
+    ],
+    "installer": {
+        "args": "\"$dir\""
+    },
+    "bin": "Calibre Portable/calibre-portable.exe",
+    "shortcuts": [
+        [
+            "Calibre Portable/calibre-portable.exe",
+            "Calibre"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.fosshub.com/Calibre.html",
+        "regex": "softwareVersion\">([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://www.fosshub.com/Calibre.html/calibre-portable-installer-$version.exe"
+    }
+}

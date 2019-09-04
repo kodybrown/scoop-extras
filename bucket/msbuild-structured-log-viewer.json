@@ -1,0 +1,23 @@
+{
+    "version": "2.0.112",
+    "description": "A logger for MSBuild that records a structured representation of executed targets, tasks, property and item values.",
+    "homepage": "https://github.com/KirillOsenkov/MSBuildStructuredLog/",
+    "license": "MIT",
+    "url": "https://github.com/KirillOsenkov/MSBuildStructuredLog/releases/download/v2.0.112/MSBuildStructuredLogViewer-2.0.112-full.nupkg",
+    "hash": "sha1:e264c323ea2e558d499ee23f94b6aa0be10f3e03",
+    "extract_dir": "lib\\net46",
+    "bin": "StructuredLogViewer.exe",
+    "shortcuts": [
+        [
+            "StructuredLogViewer.exe",
+            "MSBuild Structured Log"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/KirillOsenkov/MSBuildStructuredLog/releases/download/v$version/MSBuildStructuredLogViewer-$version-full.nupkg",
+        "hash": {
+            "url": "$baseurl/RELEASES"
+        }
+    }
+}

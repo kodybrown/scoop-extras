@@ -1,0 +1,35 @@
+{
+    "homepage": "https://lmms.io/",
+    "description": "Cross-platform music production software.",
+    "license": "GPL-2.0-or-later",
+    "version": "1.2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/LMMS/lmms/releases/download/v1.2.0/lmms-1.2.0-win64.exe#/dl.7z",
+            "hash": "c85121bf96d097a5bc9032721dae31a385084e2f8aafcc541b8db795a0027543"
+        },
+        "32bit": {
+            "url": "https://github.com/LMMS/lmms/releases/download/v1.2.0/lmms-1.2.0-win32.exe#/dl.7z",
+            "hash": "ffe6732d8ee4c0d6ca5a429d77fe130e9719a4a4df850a63ad29c09349448178"
+        }
+    },
+    "shortcuts": [
+        [
+            "lmms.exe",
+            "LMMS"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/LMMS/lmms"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/LMMS/lmms/releases/download/v$version/lmms-$version-win64.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/LMMS/lmms/releases/download/v$version/lmms-$version-win32.exe#/dl.7z"
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "homepage": "https://www.gnucash.org/",
+    "description": "Personal and small-business financial-accounting software",
+    "license": "GPL-2.0-or-later",
+    "version": "3.6",
+    "url": "https://github.com/Gnucash/gnucash/releases/download/3.6/gnucash-3.6.setup.exe",
+    "hash": "cb8ba5aa13dce6c9caedfb774abef47b8e352c2cda7d762d3f74840f1b12766a",
+    "bin": "bin\\gnucash.exe",
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "bin\\gnucash.exe",
+            "GnuCash"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/Gnucash/gnucash"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Gnucash/gnucash/releases/download/$version/gnucash-$version.setup.exe",
+        "hash": {
+            "url": "https://github.com/Gnucash/gnucash/releases/tag/$version",
+            "regex": "$sha256.*?$basename"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "homepage": "https://foicica.com/textadept/",
+    "description": "A fast, minimalist, and remarkably extensible cross-platform text editor",
+    "version": "10.6",
+    "license": "MIT",
+    "extract_dir": "textadept_10.6.win32",
+    "url": "https://foicica.com/textadept/download/textadept_10.6.win32.zip",
+    "hash": "060efa7651687bf38d299fa25555a49c55278d26b70b5f79c4dd8d8e9e1b6f85",
+    "bin": "textadept.exe",
+    "shortcuts": [
+        [
+            "textadept.exe",
+            "Textadept"
+        ]
+    ],
+    "checkver": "Download \\(v([\\d.]+)\\)",
+    "autoupdate": {
+        "url": "https://foicica.com/textadept/download/textadept_$version.win32.zip",
+        "extract_dir": "textadept_$version.win32"
+    }
+}
