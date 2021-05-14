@@ -1,26 +1,23 @@
 {
-    "version": "6.9.2",
+    "version": "7.9.0",
     "description": "A free file archiver utility, based on Open Source technologies",
     "homepage": "https://www.peazip.org",
     "license": "LGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://dotsrc.dl.osdn.net/osdn/peazip/71536/peazip_portable-6.9.2.WIN64.zip",
-            "hash": "40c967d90468fb187b78bf8e621cb7f85fe02f5bf306cc31bd9d25df0f2e7eb5",
-            "extract_dir": "peazip_portable-6.9.2.WIN64"
+            "url": "https://dotsrc.dl.osdn.net/osdn/peazip/74984/peazip_portable-7.9.0.WIN64.zip",
+            "hash": "a557a77f21a0f8b11e051edaaa92a6e3c0c2502d46bae8c69c15923ad1f524ac",
+            "extract_dir": "peazip_portable-7.9.0.WIN64"
         },
         "32bit": {
-            "url": "https://dotsrc.dl.osdn.net/osdn/peazip/71536/peazip_portable-6.9.2.WINDOWS.zip",
-            "hash": "e601694b95c6ea574db80ec6cfd35b8ef9848699b35e751520a21165fdf02e59",
-            "extract_dir": "peazip_portable-6.9.2.WINDOWS"
+            "url": "https://dotsrc.dl.osdn.net/osdn/peazip/74984/peazip_portable-7.9.0.WINDOWS.zip",
+            "hash": "734e24ead1065d031b3dc2e9831497ce00180208ac371152ad1a27a482f29d18",
+            "extract_dir": "peazip_portable-7.9.0.WINDOWS"
         }
     },
-    "persist": [
-        "res\\altconf.txt",
-        "res\\bookmarks.txt",
-        "res\\conf.txt",
-        "res\\conf-lastgood.txt",
-        "res\\custedit.txt"
+    "pre_install": [
+        "if(!(Test-Path \"$persist_dir\\res\\bookmarks.txt\")) { New-Item \"$dir\\res\\bookmarks.txt\" | Out-Null }",
+        "if(!(Test-Path \"$persist_dir\\res\\custedit.txt\")) { New-Item \"$dir\\res\\custedit.txt\" | Out-Null }"
     ],
     "bin": "peazip.exe",
     "shortcuts": [
@@ -29,9 +26,12 @@
             "PeaZip"
         ]
     ],
-    "pre_install": [
-        "if(!(Test-Path \"$persist_dir\\res\\bookmarks.txt\")) { New-Item \"$dir\\res\\bookmarks.txt\" | Out-Null }",
-        "if(!(Test-Path \"$persist_dir\\res\\custedit.txt\")) { New-Item \"$dir\\res\\custedit.txt\" | Out-Null }"
+    "persist": [
+        "res\\altconf.txt",
+        "res\\bookmarks.txt",
+        "res\\conf.txt",
+        "res\\conf-lastgood.txt",
+        "res\\custedit.txt"
     ],
     "checkver": {
         "url": "https://osdn.net/projects/peazip/",

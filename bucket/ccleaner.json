@@ -1,10 +1,22 @@
 {
+    "version": "5.79.8704",
+    "description": "Number-one tool for cleaning PC",
     "homepage": "https://www.ccleaner.com/ccleaner",
-    "version": "5.61.7392",
     "license": "Freeware",
-    "description": "Number-one tool for cleaning your PC.",
-    "url": "https://download.ccleaner.com/portable/ccsetup561.zip",
-    "hash": "82d881157e9bffcb4bac7209056f3926da24778198928eaa57fea4c55f5737b7",
+    "url": "https://download.ccleaner.com/portable/ccsetup579.zip",
+    "hash": "5993b41116eea2a66bd6f011f0ac1dde5ad1dd0c226d8c42e675770cdcd8b0fc",
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\ccleaner.ini\")) {",
+        "   Set-Content \"$dir\\ccleaner.ini\" @('[Options]', 'UpdateAuto=0', 'UpdateNotify=0', 'UpdateCheck=0', 'HelpImproveCCleaner=0') -Encoding ASCII",
+        "}",
+        "'winapp.ini', 'winreg.ini', 'winsys.ini' | ForEach-Object {",
+        "   if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" | Out-Null }",
+        "}",
+        "Copy-Item \"$persist_dir\\*\" \"$dir\" -Include 'branding.dll', 'CCleaner.dat' -ErrorAction SilentlyContinue"
+    ],
+    "uninstaller": {
+        "script": "Copy-Item \"$dir\\*\" \"$persist_dir\" -Include 'branding.dll', 'CCleaner.dat' -ErrorAction SilentlyContinue -Force"
+    },
     "architecture": {
         "64bit": {
             "bin": [
@@ -30,15 +42,15 @@
             ]
         }
     },
-    "pre_install": [
-        "if(!(Test-Path \"$persist_dir\\ccleaner.ini\")) {",
-        "   Set-Content \"$dir\\ccleaner.ini\" (@('[Options]', 'UpdateAuto=0', 'UpdateNotify=0', 'UpdateCheck=0', 'HelpImproveCCleaner=0') -join \"`r`n\") -Encoding ASCII",
-        "}"
+    "persist": [
+        "ccleaner.ini",
+        "winapp.ini",
+        "winreg.ini",
+        "winsys.ini"
     ],
-    "persist": "ccleaner.ini",
     "checkver": {
-        "url": "https://www.ccleaner.com/ccleaner/download",
-        "regex": "<strong>v([\\d.]+)</strong>"
+        "url": "https://www.ccleaner.com/ccleaner/version-history",
+        "regex": ">v([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://download.ccleaner.com/portable/ccsetup$majorVersion$minorVersion.zip"

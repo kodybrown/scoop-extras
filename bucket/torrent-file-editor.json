@@ -1,16 +1,16 @@
 {
-    "version": "0.3.15",
+    "version": "0.3.17",
     "description": ".torrent files editor.",
     "homepage": "https://torrent-file-editor.github.io",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/torrent-file-editor/torrent-file-editor/releases/download/v0.3.15/torrent-file-editor-0.3.15-x64.exe#/torrent-file-editor.exe",
-            "hash": "c0fccb6bce93128d370370c6930d65ed76b746d46d5f89f3a6944d60be1865ff"
+            "url": "https://github.com/torrent-file-editor/torrent-file-editor/releases/download/v0.3.17/torrent-file-editor-0.3.17-x64.exe#/torrent-file-editor.exe",
+            "hash": "e4aebe34501b177053378cfdf3a0aa6ad4acb60dd09e182487150fd83272bed3"
         },
         "32bit": {
-            "url": "https://github.com/torrent-file-editor/torrent-file-editor/releases/download/v0.3.15/torrent-file-editor-0.3.15-x32.exe#/torrent-file-editor.exe",
-            "hash": "fe38ffecfd6ae2afa66316735fe4787e5e1f376e14b793e099b11dddc445cfa2"
+            "url": "https://github.com/torrent-file-editor/torrent-file-editor/releases/download/v0.3.17/torrent-file-editor-0.3.17-x32.exe#/torrent-file-editor.exe",
+            "hash": "b1998144594342517608dcfb60ed868b292c41612ae032427b08af0ed5bfc4f4"
         }
     },
     "bin": "torrent-file-editor.exe",

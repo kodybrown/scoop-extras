@@ -1,10 +1,10 @@
 {
+    "version": "8.12.0",
+    "description": "A keystroke launcher",
     "homepage": "https://ueli.oliverschwendener.ch",
-    "description": "A keystroke launcher for Windows and macOS.",
-    "version": "8.1.1",
     "license": "MIT",
-    "url": "https://github.com/oliverschwendener/ueli/releases/download/v8.1.1/ueli-8.1.1-win.zip",
-    "hash": "2bc0cbc0fbea33e1eda62699099bfd2ba453ed840831ef65b341a2f1a9250cb2",
+    "url": "https://github.com/oliverschwendener/ueli/releases/download/v8.12.0/ueli-8.12.0-win.zip",
+    "hash": "bc83866561c09eb795e1d96995860837ad94ed48183d45e83ac0cade7ff87d28",
     "bin": "ueli.exe",
     "shortcuts": [
         [

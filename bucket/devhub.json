@@ -1,18 +1,16 @@
 {
-    "homepage": "https://devhubapp.com/",
-    "version": "0.94.1",
+    "version": "0.102.0",
+    "description": "TweetDeck for GitHub",
+    "homepage": "https://devhubapp.com",
     "license": "AGPL-3.0-or-later",
-    "description": "TweetDeck for GitHub.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/devhubapp/devhub/releases/download/v0.94.1/devhub-setup-0.94.1.exe#/dl.7z",
-            "hash": "sha512:0fb09980d6f42d8078da0d3dcf841398f72271efd8994aac7f873d53957583350d522ada40aaf616aca7c3870e87e5cdc288bc5980ff2d304f41edd7533d6530",
-            "installer": {
-                "script": [
-                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse"
-                ]
-            }
+            "url": "https://github.com/devhubapp/devhub/releases/download/v0.102.0/devhub-setup-0.102.0.exe#/dl.7z",
+            "hash": "sha512:656b8b133115d06700d76684416710e2660c393c432d04a6e9bd74a808e44935b6a9e30075c1ab3db3e47d3d601db53f5a2bd5daf18102725d854b6bd0363c87",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse"
+            ]
         }
     },
     "shortcuts": [
@@ -25,10 +23,14 @@
         "github": "https://github.com/devhubapp/devhub"
     },
     "autoupdate": {
-        "url": "https://github.com/devhubapp/devhub/releases/download/v$version/devhub-setup-$version.exe#/dl.7z",
-        "hash": {
-            "url": "$baseurl/latest.yml",
-            "regex": "sha512: $base64"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/devhubapp/devhub/releases/download/v$version/devhub-setup-$version.exe#/dl.7z",
+                "hash": {
+                    "url": "$baseurl/latest.yml",
+                    "regex": "sha512:\\s+$base64"
+                }
+            }
         }
     }
 }

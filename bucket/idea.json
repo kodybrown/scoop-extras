@@ -1,12 +1,12 @@
 {
-    "version": "2019.2.1",
+    "version": "2021.1.1",
     "description": "IntelliJ IDEA Community Edition for JVM and Android development.",
     "homepage": "https://www.jetbrains.com/idea/",
     "license": "Apache-2.0",
-    "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.1.win.zip",
-    "hash": "ead7b4c285877ff012779c52735c7a1e823af8a6e78a53cf5ad1fd58dcedcadd",
-    "env_add_path": "bin",
     "notes": "Please restart your command line for changes to take effect.",
+    "url": "https://download.jetbrains.com/idea/ideaIC-2021.1.1.win.zip",
+    "hash": "d404b09a2dccc06487dd3771f105ff09a0c7b9085ad0c0aa66000899949d7da4",
+    "env_add_path": "bin",
     "architecture": {
         "64bit": {
             "bin": "bin\\idea64.exe",
@@ -29,7 +29,7 @@
     },
     "checkver": {
         "url": "https://data.services.jetbrains.com/products/releases?code=IIC&latest=true&type=release",
-        "jp": "$..version"
+        "jsonpath": "$..version"
     },
     "autoupdate": {
         "url": "https://download.jetbrains.com/idea/ideaIC-$version.win.zip",

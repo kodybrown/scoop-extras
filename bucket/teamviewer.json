@@ -1,13 +1,13 @@
 {
+    "version": "15.17.7",
+    "description": "TeamViewer is proprietary computer software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
     "homepage": "https://www.teamviewer.com",
     "license": {
         "identifier": "Shareware",
         "url": "https://www.teamviewer.com/en/eula/"
     },
-    "description": "TeamViewer is proprietary computer software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
-    "version": "14.5.5819",
-    "url": "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip",
-    "hash": "35e6f6e310be8ab6ff9e854f092697b840053aa3229ad2e769614c57249c3ce1",
+    "url": "https://download.teamviewer.com/download/version_15x/TeamViewerPortable.zip",
+    "hash": "3d9c4ad1608f6e0b06feb0ef08542279f1661addd2e2a9c9ff36f96a3510a6fc",
     "bin": "teamviewer.exe",
     "shortcuts": [
         [
@@ -18,7 +18,7 @@
     "persist": "teamviewer.ini",
     "checkver": {
         "url": "https://www.teamviewer.com/en/download/windows/",
-        "re": ">\\s*([\\d.]+)\\s*<"
+        "regex": "Current version:\\s*([\\d.]+)\\s*</"
     },
     "autoupdate": {
         "url": "https://download.teamviewer.com/download/version_$majorVersionx/TeamViewerPortable.zip"

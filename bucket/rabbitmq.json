@@ -1,27 +1,30 @@
 {
-    "homepage": "https://www.rabbitmq.com/",
-    "version": "3.7.17",
-    "description": "An open-source message-broker software.",
+    "version": "3.8.16",
+    "description": "Message-broker",
+    "homepage": "https://www.rabbitmq.com",
     "license": "MPL-1.1",
-    "url": "https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.17/rabbitmq-server-windows-3.7.17.zip",
-    "hash": "2406d3f822fcf2efe74aa766dd0b04a84a6d346a413fae18c1a2bd7549f7cfcd",
     "depends": "erlang",
-    "extract_dir": "rabbitmq_server-3.7.17",
+    "url": "https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.16/rabbitmq-server-windows-3.8.16.zip",
+    "hash": "9a0541b19e6781db88c6319a84a0ee8a358f2cd7a53bfecffd2749b0ddc0e15e",
+    "extract_dir": "rabbitmq_server-3.8.16",
     "bin": [
+        "sbin\\rabbitmqctl.bat",
+        "sbin\\rabbitmq-defaults.bat",
+        "sbin\\rabbitmq-diagnostics.bat",
+        "sbin\\rabbitmq-echopid.bat",
+        "sbin\\rabbitmq-env.bat",
+        "sbin\\rabbitmq-plugins.bat",
+        "sbin\\rabbitmq-queues.bat",
         "sbin\\rabbitmq-server.bat",
         "sbin\\rabbitmq-service.bat",
-        "sbin\\rabbitmqctl.bat",
-        "sbin\\rabbitmq-plugins.bat",
-        "sbin\\rabbitmq-env.bat",
-        "sbin\\rabbitmq-echopid.bat",
-        "sbin\\rabbitmq-defaults.bat"
+        "sbin\\rabbitmq-upgrade.bat"
     ],
     "env_set": {
         "RABBITMQ_SERVER": "$dir"
     },
     "checkver": {
         "url": "https://www.rabbitmq.com/download.html",
-        "re": "The latest release of RabbitMQ is <b>([\\d.]+)</b>"
+        "regex": "> of RabbitMQ is <strong>([\\d.]+)</"
     },
     "autoupdate": {
         "url": "https://github.com/rabbitmq/rabbitmq-server/releases/download/v$version/rabbitmq-server-windows-$version.zip",

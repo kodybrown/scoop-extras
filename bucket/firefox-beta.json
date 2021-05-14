@@ -1,16 +1,16 @@
 {
+    "version": "89.0b12",
     "description": "Beta builds of Firefox: the popular open source web browser.",
     "homepage": "https://www.mozilla.org/en-US/firefox/beta/",
-    "version": "70.0b3",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/70.0b3/win64/en-US/Firefox%20Setup%2070.0b3.exe#/dl.7z",
-            "hash": "sha512:80480335121d76e887baa78c4356193712ad977f89f9001f071804b0257a0df408a9f0f8e08255ddecaf01d7fea2a371bfd5dbf0f4c43792aa94c64a34c2058f"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/89.0b12/win64/en-US/Firefox%20Setup%2089.0b12.exe#/dl.7z",
+            "hash": "sha512:ea2d6caa1f2da30a2e2ffb80980535a7335b88be0300c0cb928e0cbcc7b86a3c75cb03c1ba409a42fb60f4627de5a87919597da8d6092892c5eb79d15e71248d"
         },
         "32bit": {
-            "url": "https://archive.mozilla.org/pub/firefox/releases/70.0b3/win32/en-US/Firefox%20Setup%2070.0b3.exe#/dl.7z",
-            "hash": "sha512:58e74913011cdb92082ffc516aafc31ebeaf91fd3b617585559dbc2c99b8ef524644aa888b5f607426a056f156e33f8e9c048ac71e658dbe39cbb75599d9434e"
+            "url": "https://archive.mozilla.org/pub/firefox/releases/89.0b12/win32/en-US/Firefox%20Setup%2089.0b12.exe#/dl.7z",
+            "hash": "sha512:4d0a69af9f676ce0c93f82335423f6584fa5a2e1bbc52cbc1528626b09f5abbc237ac595ac905d345844c63ff5f624e212518e3f624d6174e56287017d2aeea8"
         }
     },
     "extract_dir": "core",
@@ -37,14 +37,14 @@
                 "url": "https://archive.mozilla.org/pub/firefox/releases/$version/win64/en-US/Firefox%20Setup%20$version.exe#/dl.7z",
                 "hash": {
                     "url": "https://archive.mozilla.org/pub/firefox/releases/$version/SHA512SUMS",
-                    "regex": "$sha512\\s+win64/en-US/Firefox Setup"
+                    "regex": "$sha512\\s+win64/en-US/$basename"
                 }
             },
             "32bit": {
                 "url": "https://archive.mozilla.org/pub/firefox/releases/$version/win32/en-US/Firefox%20Setup%20$version.exe#/dl.7z",
                 "hash": {
                     "url": "https://archive.mozilla.org/pub/firefox/releases/$version/SHA512SUMS",
-                    "regex": "$sha512\\s+win32/en-US/Firefox Setup"
+                    "regex": "$sha512\\s+win32/en-US/$basename"
                 }
             }
         }

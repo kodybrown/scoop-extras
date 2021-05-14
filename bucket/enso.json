@@ -1,10 +1,10 @@
 {
+    "version": "0.6.1",
+    "description": "A feature-rich descendant of Enso Community Edition",
     "homepage": "https://github.com/GChristensen/enso-portable",
-    "description": "A feature-rich descendant of Enso Community Edition (win32).",
-    "version": "0.4.5",
     "license": "Unknown",
-    "url": "https://github.com/GChristensen/enso-portable/releases/download/v0.4.5/enso-open-source-0.4.5.exe#/dl.7z",
-    "hash": "e3a9b79e02cb4d47286957d429b845d8aff8ee7e44039228e4277969b2a1902d",
+    "url": "https://github.com/GChristensen/enso-portable/releases/download/v0.6.1/enso-open-source-0.6.1.exe#/dl.7z",
+    "hash": "bca8d1c151294db8362c3dcedb4a54815a3f486637b851fda20f4bd78a8d0e3e",
     "bin": [
         [
             "run-enso.exe",

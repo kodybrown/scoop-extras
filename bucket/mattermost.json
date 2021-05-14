@@ -1,16 +1,16 @@
 {
-    "version": "4.2.3",
-    "description": "Native desktop application for Mattermost.",
-    "homepage": "https://mattermost.com/",
+    "version": "4.6.2",
+    "description": "Team communication client",
+    "homepage": "https://mattermost.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-win64.zip",
-            "hash": "7e395bd776e19484985c5b857a8648c777ac1539f55ddfbdcf77cd05e3358218"
+            "url": "https://releases.mattermost.com/desktop/4.6.2/mattermost-desktop-4.6.2-win-x64.zip",
+            "hash": "7e82bc0e45ac0cc5bf1b9bd1e0fb3e2a5da158854382d309d8fec1dfc24e344d"
         },
         "32bit": {
-            "url": "https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-win32.zip",
-            "hash": "d2138ab8fceae7345b82e74875ffafbf4de0e4efb1007e5098e29a7396530cf1"
+            "url": "https://releases.mattermost.com/desktop/4.6.2/mattermost-desktop-4.6.2-win-ia32.zip",
+            "hash": "95a87baa8253a10503c256582a9d9d5604ff64b7f34f28e32acbd496f59434a6"
         }
     },
     "bin": "Mattermost.exe",
@@ -26,15 +26,15 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://releases.mattermost.com/desktop/$version/mattermost-desktop-$version-win64.zip"
+                "url": "https://releases.mattermost.com/desktop/$version/mattermost-desktop-$version-win-x64.zip"
             },
             "32bit": {
-                "url": "https://releases.mattermost.com/desktop/$version/mattermost-desktop-$version-win32.zip"
+                "url": "https://releases.mattermost.com/desktop/$version/mattermost-desktop-$version-win-ia32.zip"
             }
         },
         "hash": {
             "url": "https://github.com/mattermost/desktop/releases/tag/v$version",
-            "regex": "(?sm)$basename</a>\\s*<ul>\\s*<li>SHA-256 Checksum: <code>$sha256"
+            "regex": "(?sm)$basename.*?$sha256"
         }
     }
 }

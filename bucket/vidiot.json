@@ -1,0 +1,41 @@
+{
+    "version": "0.3.33",
+    "description": "A non-linear video editor targeted for home video editing.",
+    "homepage": "https://sourceforge.net/projects/vidiot",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sourceforge.net/project/vidiot/Vidiot-0.3.33-win64.zip",
+            "hash": "sha1:f3c2d5b1949b83005ad192a6673558820c04090b",
+            "extract_dir": "Vidiot-0.3.33-win64"
+        },
+        "32bit": {
+            "url": "https://downloads.sourceforge.net/project/vidiot/Vidiot-0.3.33-win32.zip",
+            "hash": "sha1:dd8d17f46d3e2942b2cb3845b5e5778746e6b3a3",
+            "extract_dir": "Vidiot-0.3.33-win32"
+        }
+    },
+    "bin": "vidiot.exe",
+    "shortcuts": [
+        [
+            "vidiot.exe",
+            "Vidiot"
+        ]
+    ],
+    "checkver": {
+        "url": "https://sourceforge.net/projects/vidiot/files/",
+        "regex": "Release\\s+([\\d.]+)\\s+\\(r"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sourceforge.net/project/vidiot/Vidiot-$version-win64.zip",
+                "extract_dir": "Vidiot-$version-win64"
+            },
+            "32bit": {
+                "url": "https://downloads.sourceforge.net/project/vidiot/Vidiot-$version-win32.zip",
+                "extract_dir": "Vidiot-$version-win32"
+            }
+        }
+    }
+}

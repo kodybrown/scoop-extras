@@ -1,18 +1,18 @@
 {
-    "homepage": "https://pwsafe.org/",
+    "version": "3.55.0",
     "description": "Safely and easily create a secured and encrypted user name/password list.",
+    "homepage": "https://pwsafe.org/",
     "license": "Artistic-2.0",
-    "version": "3.49.1",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/pwsafe/pwsafe/releases/download/3.49.1/pwsafe64-3.49.1-bin.zip",
-            "hash": "dc1051d6435ae2a90cd02c0727576c11e1f0871436bc101b4314afdd684a6272",
-            "extract_dir": "pwsafe64-3.49.1-bin"
+            "url": "https://github.com/pwsafe/pwsafe/releases/download/3.55.0/pwsafe64-3.55.0-bin.zip",
+            "hash": "5d043dc249cb47521fb07b6978057968b323aabb6b20ec228d8e59d75d1bcad3",
+            "extract_dir": "pwsafe64-3.55.0-bin"
         },
         "32bit": {
-            "url": "https://github.com/pwsafe/pwsafe/releases/download/3.49.1/pwsafe-3.49.1-bin.zip",
-            "hash": "77625334c71aba40b52e55148a9555d8fc2ae7f7f44c9a8fc291ada74538e97b",
-            "extract_dir": "pwsafe-3.49.1-bin"
+            "url": "https://github.com/pwsafe/pwsafe/releases/download/3.55.0/pwsafe-3.55.0-bin.zip",
+            "hash": "e50096c2817fd325b58171bba11c883efbe58953b5db99b8344e7e8abe7515bb",
+            "extract_dir": "pwsafe-3.55.0-bin"
         }
     },
     "bin": "pwsafe.exe",
@@ -24,7 +24,7 @@
     ],
     "checkver": {
         "url": "https://github.com/pwsafe/pwsafe/releases",
-        "re": "pwsafe64-([\\d.]+).msi"
+        "regex": "pwsafe64-([\\d.]+).msi"
     },
     "autoupdate": {
         "architecture": {

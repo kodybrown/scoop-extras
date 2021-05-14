@@ -1,26 +1,22 @@
 {
+    "version": "1.19.1",
+    "description": "Easily manage the contents of Azure storage account.",
     "homepage": "https://azure.microsoft.com/en-us/features/storage-explorer/",
-    "description": "Easily manage the contents of your Azure storage account.",
-    "version": "1.9.0",
-    "license": "Unknown",
-    "url": "https://download.microsoft.com/download/A/E/3/AE32C485-B62B-4437-92F7-8B6B2C48CB40/StorageExplorer.exe#/storageexplorer_installer.exe",
-    "hash": "e8b225d9ec889a39886a4730d82c53469dca28fc49f394991db908d47807692b",
-    "installer": {
-        "args": [
-            "/VERYSILENT",
-            "/DIR=\"$dir\""
+    "license": "CC-BY-4.0",
+    "url": "https://github.com/microsoft/AzureStorageExplorer/releases/download/V1.19.1/Windows_StorageExplorer.exe",
+    "hash": "b1cda38c0a817ec30b0a60022b4f8046ed92893ecdf763f7b1d0e18c295937e8",
+    "innosetup": true,
+    "bin": "StorageExplorer.exe",
+    "shortcuts": [
+        [
+            "StorageExplorer.exe",
+            "Azure Storage Explorer"
         ]
-    },
-    "uninstaller": {
-        "file": "unins000.exe",
-        "args": "/VERYSILENT"
-    },
-    "bin": "storageexplorer.exe",
+    ],
     "checkver": {
-        "url": "https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-explorer-relnotes",
-        "re": "Version ([\\d.]+)"
+        "github": "https://github.com/microsoft/AzureStorageExplorer"
     },
     "autoupdate": {
-        "url": "https://download.microsoft.com/download/A/E/3/AE32C485-B62B-4437-92F7-8B6B2C48CB40/StorageExplorer.exe#/storageexplorer_installer.exe"
+        "url": "https://github.com/microsoft/AzureStorageExplorer/releases/download/V$version/Windows_StorageExplorer.exe"
     }
 }

@@ -1,30 +1,30 @@
 {
-    "homepage": "https://tomcat.apache.org/",
-    "version": "9.0.24",
+    "version": "10.0.6",
+    "description": "Implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies",
+    "homepage": "https://tomcat.apache.org",
     "license": "Apache-2.0",
-    "description": "An open source implementation of the Java Servlet, JavaServer Pages, Java Expression Language and Java WebSocket technologies.",
+    "suggest": {
+        "JRE": "java/openjdk"
+    },
     "architecture": {
         "64bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24-windows-x64.zip",
-            "hash": "sha512:d1d53423ec6181d3184b41d21b886643b0f2e51623b63475a8e5d5b720be091d6a1b29449b0862d21e358b64f86c4698a758ec21b7f3e81deedfc8da0474a6a6"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-10/v10.0.6/bin/apache-tomcat-10.0.6-windows-x64.zip",
+            "hash": "sha512:9dc6733aab8b02b48762d789b272cc26245d5446848873ec06cd07c2f89d8154abb90ec161f53402ff2ae3d63da44ed8c09b3a56654734962524e07feddb104b"
         },
         "32bit": {
-            "url": "https://www.apache.org/dist/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24-windows-x86.zip",
-            "hash": "sha512:a8c79f7fce0be31991a08f715553685dbf0fcc07bb231b758f09bbc3f12b6cc3d53ead595596449840451baec0c4a48b5852c63e36c7cc2fa91d6390f0006313"
+            "url": "https://www.apache.org/dist/tomcat/tomcat-10/v10.0.6/bin/apache-tomcat-10.0.6-windows-x86.zip",
+            "hash": "sha512:6d747e91e3a42188f59f46df83878e9308492e0771c0585a6446a6598b947a53c1e21addfa16dd7e49e548f07fdc1b1c34069ea28c7cbedfe7ac3c9b0f79b369"
         }
     },
-    "extract_dir": "apache-tomcat-9.0.24",
+    "extract_dir": "apache-tomcat-10.0.6",
     "bin": "bin\\catalina.bat",
     "env_set": {
         "CATALINA_HOME": "$dir",
         "CATALINA_BASE": "$dir"
     },
-    "suggest": {
-        "JRE": "java/openjdk"
-    },
     "checkver": {
-        "url": "https://www.apache.org/dist/tomcat/tomcat-9/?C=M;O=D",
-        "re": "v(?<version>[\\d.]+)"
+        "url": "https://www.apache.org/dist/tomcat/tomcat-10/?C=M;O=D",
+        "regex": "v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {

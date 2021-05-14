@@ -1,35 +1,35 @@
 {
-    "homepage": "https://github.com/VSCodium/vscodium",
-    "version": "1.37.1",
-    "license": "MIT",
+    "version": "1.56.2",
     "description": "Binary releases of VS Code without MS branding/telemetry/licensing.",
+    "homepage": "https://github.com/VSCodium/vscodium",
+    "license": "MIT",
+    "notes": "Add VSCodium as a context menu option by running: \"$dir\\vscodium-install-context.reg\"",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/VSCodium/vscodium/releases/download/1.37.1/VSCodium-win32-x64-1.37.1.zip",
+                "https://github.com/VSCodium/vscodium/releases/download/1.56.2/VSCodium-win32-x64-1.56.2.zip",
                 "https://raw.githubusercontent.com/lukesampson/scoop-extras/master/scripts/vscode-install-context.reg#/vscodium-install-context.reg",
                 "https://raw.githubusercontent.com/lukesampson/scoop-extras/master/scripts/vscode-uninstall-context.reg#/vscodium-uninstall-context.reg"
             ],
             "hash": [
-                "a32e021dc419fb1e8f2d08705e42679b530cdb58bb8a5f636e6507f2313c3e47",
-                "3673d7767da27418c4c7eea146043fa6a7c59df65199c79850e58367fd66fb56",
-                "9b55432e91e8534cc871d8d57f826761649d1ed7a3a5d7cabc3089fe5a6e147f"
+                "6bd0d89ce6218bd96685ffef3450bcc4f4c29543a64965cc2a693680dacb0ebc",
+                "b65d66860d9ccc18bfb05237b03e06db0d6c574be3d4b946c2a5e6865c08cb28",
+                "df2a5162e72e2518e2b75b4337c8e7b46c136554872af90fa0de1cf6ebef376f"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/VSCodium/vscodium/releases/download/1.37.1/VSCodium-win32-ia32-1.37.1.zip",
+                "https://github.com/VSCodium/vscodium/releases/download/1.56.2/VSCodium-win32-ia32-1.56.2.zip",
                 "https://raw.githubusercontent.com/lukesampson/scoop-extras/master/scripts/vscode-install-context.reg#/vscodium-install-context.reg",
                 "https://raw.githubusercontent.com/lukesampson/scoop-extras/master/scripts/vscode-uninstall-context.reg#/vscodium-uninstall-context.reg"
             ],
             "hash": [
-                "199cb2079c8fdfea7f88e087470302bff92dfb8f3aff664e58b2e63663e9506c",
-                "3673d7767da27418c4c7eea146043fa6a7c59df65199c79850e58367fd66fb56",
-                "9b55432e91e8534cc871d8d57f826761649d1ed7a3a5d7cabc3089fe5a6e147f"
+                "dfd0d66cfb2862431eae0b71a303346b60e593faff550345caaff84839356161",
+                "b65d66860d9ccc18bfb05237b03e06db0d6c574be3d4b946c2a5e6865c08cb28",
+                "df2a5162e72e2518e2b75b4337c8e7b46c136554872af90fa0de1cf6ebef376f"
             ]
         }
     },
-    "notes": "Add VSCodium as a context menu option by running: \"$dir\\vscodium-install-context.reg\"",
     "bin": "bin\\codium.cmd",
     "shortcuts": [
         [
@@ -38,16 +38,22 @@
         ]
     ],
     "post_install": [
-        "if(Test-Path(\"$dir\\vscodium-install-context.reg\")) {",
+        "if (Test-Path \"$dir\\vscodium-install-context.reg\") {",
         "  $codepath = \"$dir\\VSCodium.exe\".Replace('\\', '\\\\')",
         "  $content = Get-Content \"$dir\\vscodium-install-context.reg\"",
         "  $content = $content.Replace('$code', $codepath)",
         "  $content = $content.Replace('Code', 'VSCodium')",
+        "  if ($global) {",
+        "    $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
+        "  }",
         "  $content | Set-Content -Path \"$dir\\vscodium-install-context.reg\"",
         "}",
-        "if(Test-Path(\"$dir\\vscodium-uninstall-context.reg\")) {",
+        "if (Test-Path \"$dir\\vscodium-uninstall-context.reg\") {",
         "  $content = Get-Content \"$dir\\vscodium-uninstall-context.reg\"",
         "  $content = $content.Replace('Code', 'VSCodium')",
+        "  if ($global) {",
+        "    $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
+        "  }",
         "  $content | Set-Content -Path \"$dir\\vscodium-uninstall-context.reg\"",
         "}"
     ],

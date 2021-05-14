@@ -1,16 +1,16 @@
 {
-    "version": "6.1.03",
+    "version": "6.1.43",
+    "description": "The scientific analysis of speech in phonetics",
     "homepage": "http://www.fon.hum.uva.nl/praat/",
-    "description": "A free cross-platform software for the scientific analysis of speech in phonetics",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/praat/praat/releases/download/v6.1.03/praat6103_win64.zip",
-            "hash": "caa31fa72ae9785e005b71afe432cb80379c7b65f32244cb2208fca313d26406"
+            "url": "https://github.com/praat/praat/releases/download/v6.1.43/praat6143_win64.zip",
+            "hash": "60cab56632ef805b7b2876ed22a0ba0b7cad972a085b7014bbafc8230f111f45"
         },
         "32bit": {
-            "url": "https://github.com/praat/praat/releases/download/v6.1.03/praat6103_win32.zip",
-            "hash": "25ac74318548bbe78f6fa739c64d9c974dccd67dce5c07d0be99601a05b9ac92"
+            "url": "https://github.com/praat/praat/releases/download/v6.1.43/praat6143_win32.zip",
+            "hash": "6f50447169a843aeac29d163e5bd7f03a1e62c5cb742a5772dbe79ec0766d71d"
         }
     },
     "bin": "Praat.exe",
@@ -22,7 +22,7 @@
     ],
     "checkver": {
         "github": "https://github.com/praat/praat",
-        "regex": "download/v([\\d.]+)/(?<filename>praat\\d+)"
+        "regex": "download/v([\\w.]+)/(?<filename>praat\\d+)"
     },
     "autoupdate": {
         "architecture": {

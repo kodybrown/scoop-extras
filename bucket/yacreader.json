@@ -1,16 +1,16 @@
 {
-    "version": "9.5.0",
+    "version": "9.7.1.2009123",
+    "description": "A comic reader and manager",
     "homepage": "https://www.yacreader.com",
-    "description": "A comic reader and manager.",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/YACReader/yacreader/releases/download/9.5.0/YACReader-9.5.0-win64.exe",
-            "hash": "3dbe9d5da2584197ed8b0319b67363843a90148168db9d2465be3daabbcaf2dd"
+            "url": "https://github.com/YACReader/yacreader/releases/download/9.7.1/YACReader-v9.7.1.2009123-winx64-7z.exe",
+            "hash": "7e8c832618a52e0e355ae40faa7969d443599f02c47cb2e6e057f4cd725ae59a"
         },
         "32bit": {
-            "url": "https://github.com/YACReader/yacreader/releases/download/9.5.0/YACReader-9.5.0-win32.exe",
-            "hash": "03ea3decfcfd5c0414ef0517b2a55e6a75fc4143cb633e28cbe7a141b5d802fb"
+            "url": "https://github.com/YACReader/yacreader/releases/download/9.7.1/YACReader-v9.7.1.2009123-winx86-7z.exe",
+            "hash": "79194e14076a9660f302d5561f5959a5bc54a33682a8c85c08d0b633ed24f2c2"
         }
     },
     "innosetup": true,
@@ -30,15 +30,16 @@
         ]
     ],
     "checkver": {
-        "github": "https://github.com/YACReader/yacreader"
+        "github": "https://github.com/YACReader/yacreader",
+        "regex": "YACReader-v([\\d.]+)-winx86-7z"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/YACReader/yacreader/releases/download/$version/YACReader-$version-win64.exe"
+                "url": "https://github.com/YACReader/yacreader/releases/download/$matchHead/YACReader-v$version-winx64-7z.exe"
             },
             "32bit": {
-                "url": "https://github.com/YACReader/yacreader/releases/download/$version/YACReader-$version-win32.exe"
+                "url": "https://github.com/YACReader/yacreader/releases/download/$matchHead/YACReader-v$version-winx86-7z.exe"
             }
         }
     }

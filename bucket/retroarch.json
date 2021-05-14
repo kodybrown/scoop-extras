@@ -1,29 +1,27 @@
 {
-    "homepage": "https://www.retroarch.com/",
+    "version": "1.9.2",
     "description": "Frontend for emulators, game engines and media players.",
+    "homepage": "https://www.retroarch.com/",
     "license": "GPL-3.0-only",
-    "version": "1.7.8v2",
     "architecture": {
         "64bit": {
-            "url": "https://buildbot.libretro.com/stable/1.7.8/windows/x86_64/RetroArch.7z",
-            "hash": "a8ac2f2a8e8988ebbcc2face6c1b7efa1c310209cf13f2613762d41923a45998"
+            "url": "https://buildbot.libretro.com/stable/1.9.2/windows/x86_64/RetroArch.7z",
+            "hash": "43295d3c71580a4bac1370cd19e5927a63577850348dab29d258b0ca36cbbfd2",
+            "extract_dir": "RetroArch-Win64"
         },
         "32bit": {
-            "url": "https://buildbot.libretro.com/stable/1.7.8/windows/x86/RetroArch.7z",
-            "hash": "1feadb24df70eb7d5b6e18d66ed4804c99ec869eec2c8f61b5341decebe13805"
+            "url": "https://buildbot.libretro.com/stable/1.9.2/windows/x86/RetroArch.7z",
+            "hash": "6866a692e56ac86498b97211d067f3c85ec94b7ca863cf7e7bbcd86824c5eabc",
+            "extract_dir": "RetroArch-Win32"
         }
     },
     "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\retroarch.cfg\")) {",
-        "    New-Item \"$dir\\retroarch.cfg\" -Type File | Out-Null",
+        "if (!(Test-Path \"$persist_dir\\retroarch.cfg\")) { Move-Item \"$dir\\retroarch.default.cfg\" \"$dir\\retroarch.cfg\" }",
+        "'favorites', 'history' | ForEach-Object {",
+        "    if (!(Test-Path \"$persist_dir\\content_$_.lpl\")) { New-Item \"$dir\\content_$_.lpl\" | Out-Null }",
         "}"
     ],
-    "bin": [
-        [
-            "retroarch.exe",
-            "retroarch"
-        ]
-    ],
+    "bin": "retroarch.exe",
     "shortcuts": [
         [
             "retroarch.exe",
@@ -34,14 +32,18 @@
         "assets\\wallpapers",
         "cores",
         "cheats",
+        "config",
         "playlists",
         "records",
         "recordings",
         "saves",
         "screenshots",
+        "shaders\\presets",
         "states",
         "system",
         "thumbnails",
+        "content_favorites.lpl",
+        "content_history.lpl",
         "retroarch.cfg"
     ],
     "checkver": {

@@ -1,38 +1,32 @@
 {
+    "version": "3.36.0",
+    "description": "Lossless trimming tool for video and audio files",
     "homepage": "https://github.com/mifi/lossless-cut",
-    "description": "Save space by quickly and losslessly trimming video and audio files.",
-    "version": "2.4.0",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/mifi/lossless-cut/releases/download/v2.4.0/LosslessCut-win32-x64.zip",
-            "hash": "49cf1e1a250fab8dfd42f33ce4e7d4e1de19ebd29caa975ce579cf22e7dc130f",
-            "extract_dir": "LosslessCut-win32-x64"
-        },
-        "32bit": {
-            "url": "https://github.com/mifi/lossless-cut/releases/download/v2.4.0/LosslessCut-win32-ia32.zip",
-            "hash": "0f87bd29d44266f65f30ece2af766347b4d4e16fd9cd753f24bc75ee35252f0b",
-            "extract_dir": "LosslessCut-win32-ia32"
+            "url": "https://github.com/mifi/lossless-cut/releases/download/v3.36.0/LosslessCut-win.exe#/dl.7z",
+            "hash": "4122370b50295473b9ddf0a5028253f3260adea4338a4b69a129962c33371585",
+            "installer": {
+                "script": [
+                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                    "Remove-Item \"$dir\\`$*\" -Force -Recurse"
+                ]
+            }
         }
     },
+    "bin": "LosslessCut.exe",
     "shortcuts": [
         [
             "LosslessCut.exe",
             "LosslessCut"
         ]
     ],
-    "checkver": {
-        "github": "https://github.com/mifi/lossless-cut"
-    },
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mifi/lossless-cut/releases/download/v$version/LosslessCut-win32-x64.zip",
-                "extract_dir": "LosslessCut-win32-x64"
-            },
-            "32bit": {
-                "url": "https://github.com/mifi/lossless-cut/releases/download/v$version/LosslessCut-win32-ia32.zip",
-                "extract_dir": "LosslessCut-win32-ia32"
+                "url": "https://github.com/mifi/lossless-cut/releases/download/v$version/LosslessCut-win.exe#/dl.7z"
             }
         }
     }

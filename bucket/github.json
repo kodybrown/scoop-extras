@@ -1,12 +1,12 @@
 {
-    "homepage": "https://desktop.github.com/",
+    "version": "2.8.1",
     "description": "Extend your GitHub workflow beyond your browser.",
-    "version": "2.1.3",
+    "homepage": "https://desktop.github.com/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://central.github.com/deployments/desktop/desktop/latest/GitHubDesktop-2.1.3-full.nupkg",
-            "hash": "sha1:a679d5856116cacfd88e535415f05fb6d03cacb6"
+            "url": "https://central.github.com/deployments/desktop/desktop/latest/GitHubDesktop-2.8.1-x64-full.nupkg",
+            "hash": "sha1:298afffe3ab85d1cf8c9aec0c49765d8b4df749d"
         }
     },
     "extract_dir": "lib\\net45",
@@ -19,15 +19,16 @@
     ],
     "checkver": {
         "url": "https://central.github.com/api/deployments/desktop/desktop/latest/RELEASES",
-        "regex": "GitHubDesktop-([\\d.]+)-full.nupkg",
+        "regex": "GitHubDesktop-([\\d.]+)-full\\.nupkg",
         "reverse": true
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://central.github.com/deployments/desktop/desktop/latest/GitHubDesktop-$version-full.nupkg",
+                "url": "https://central.github.com/deployments/desktop/desktop/latest/GitHubDesktop-$version-x64-full.nupkg",
                 "hash": {
-                    "url": "https://central.github.com/api/deployments/desktop/desktop/latest/RELEASES"
+                    "url": "https://central.github.com/api/deployments/desktop/desktop/latest/RELEASES",
+                    "regex": "$sha1\\s+GithubDesktop-$version-"
                 }
             }
         }

@@ -1,19 +1,17 @@
 {
-    "homepage": "https://httptoolkit.tech/",
-    "version": "0.1.10",
+    "version": "1.3.0",
+    "description": "HTTP(S) debugging proxy, analyzer and client",
+    "homepage": "https://httptoolkit.tech",
     "license": "AGPL-3.0-or-later",
-    "description": "HTTP(S) debugging proxy, analyzer and client.",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/httptoolkit/httptoolkit-desktop/releases/download/v0.1.10/httptoolkit-0.1.10-full.nupkg",
-            "hash": "sha1:f9ef618a01c67d0f28b323187355a021678d183f"
+            "url": "https://github.com/httptoolkit/httptoolkit-desktop/releases/download/v1.3.0/HttpToolkit-win-x64-1.3.0.zip",
+            "hash": "43052e4df380b19d119a5c5580741cb56ccd4bae9786b59178ecf51d04435b7e"
         }
     },
-    "extract_dir": "lib\\net45",
-    "bin": "resources\\app\\httptoolkit-server\\bin\\httptoolkit-server.cmd",
     "shortcuts": [
         [
-            "httptoolkit.exe",
+            "HTTP Toolkit.exe",
             "HTTP Toolkit"
         ]
     ],
@@ -21,9 +19,10 @@
         "github": "https://github.com/httptoolkit/httptoolkit-desktop"
     },
     "autoupdate": {
-        "url": "https://github.com/httptoolkit/httptoolkit-desktop/releases/download/v$version/httptoolkit-$version-full.nupkg",
-        "hash": {
-            "url": "$baseurl/RELEASES"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/httptoolkit/httptoolkit-desktop/releases/download/v$version/HttpToolkit-win-x64-$version.zip"
+            }
         }
     }
 }

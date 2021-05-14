@@ -1,21 +1,21 @@
 {
-    "version": "5.1.2.766",
+    "version": "5.4.1.1178",
+    "description": "Excellent utility that comes packed with various useful features on data recovery, disk partition management, backup & restore.",
     "homepage": "http://www.diskgenius.cn/",
-    "description": "DiskGenius is an excellent utility that comes packed with various useful features on data recovery, disk partition management, backup & restore.",
     "license": "Unknown",
     "architecture": {
         "64bit": {
-            "url": "http://download.eassos.cn/DG512766_x64.zip",
-            "hash": "08ec1be353d3d0e03df103c4e73d44576482ad7c6eb92886db1ff63b5510181e"
+            "url": "http://download.eassos.cn/DG5411178_x64.zip",
+            "hash": "598e4a6c3762cb94831740b8a68273bd4b96e433881083e58f079572db1a937e"
         },
         "32bit": {
-            "url": "http://download.eassos.cn/DG512766_x86.zip",
-            "hash": "8379795f89fae78f43d193e45fa556f4d2aea752fcd81dbc700d8817c5f05072"
+            "url": "http://download.eassos.cn/DG5411178_x86.zip",
+            "hash": "232808f87946a4b970edce913726460209ab676d9b4264954d019074fc1e93d6"
         }
     },
     "extract_dir": "DiskGenius",
-    "bin": "DiskGenius.exe",
     "pre_install": "if (!(Test-Path \"$persist_dir\\Options.ini\")) { New-Item \"$dir\\Options.ini\" -ItemType File | Out-Null }",
+    "bin": "DiskGenius.exe",
     "persist": "Options.ini",
     "shortcuts": [
         [

@@ -1,22 +1,26 @@
 {
-    "version": "6.46.1",
-    "description": "The official command line client for Cloud Foundry.",
-    "homepage": "https://github.com/cloudfoundry/cli/",
+    "version": "7.2.0",
+    "description": "The official command line client for Cloud Foundry",
+    "homepage": "https://github.com/cloudfoundry/cli",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://cli.run.pivotal.io/stable?release=windows64-exe&version=6.46.1#/dl.7z",
-            "hash": "c6b983dbd808647d1125b1f5afefd258578c6ffe307fb84ba1f9e72a5a61b4fa"
+            "url": "https://cli.run.pivotal.io/stable?release=windows64-exe&version=7.2.0#/dl.7z",
+            "hash": "2c3c21d235ed866ae7091bfee6916a53bd8dc1f17a0ca3bc6d7f78f959ae4537"
         },
         "32bit": {
-            "url": "https://cli.run.pivotal.io/stable?release=windows32-exe&version=6.46.1#/dl.7z",
-            "hash": "ac2a93e9658c2e109db1dca7c6fde5e16c6d694b3a59a1a8437f33f4124a9ff4"
+            "url": "https://cli.run.pivotal.io/stable?release=windows32-exe&version=7.2.0#/dl.7z",
+            "hash": "a9631c8f0aee0523962d7b03810d42f7174129c7cdfea3d68d794b3a523718c7"
         }
     },
-    "bin": "cf.exe",
-    "checkver": {
-        "github": "https://github.com/cloudfoundry/cli"
-    },
+    "bin": [
+        "cf7.exe",
+        [
+            "cf7.exe",
+            "cf"
+        ]
+    ],
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {

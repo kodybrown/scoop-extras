@@ -1,10 +1,11 @@
 {
-    "version": "4.23.1",
+    "version": "4.35.0",
     "description": "Block spying and tracking on Windows",
     "homepage": "https://github.com/crazy-max/WindowsSpyBlocker",
     "license": "MIT",
-    "url": "https://github.com/crazy-max/WindowsSpyBlocker/releases/download/4.23.1/WindowsSpyBlocker.exe",
-    "hash": "db43ed9b8e0466f4b73e9a1f32bbe8afff190222be1d79411b980b2764023470",
+    "url": "https://github.com/crazy-max/WindowsSpyBlocker/releases/download/4.35.0/WindowsSpyBlocker.exe",
+    "hash": "e639ccff2e21ce462ed17b56fdb6e29caaa026eb853c8255789078fb6ce1a6ae",
+    "pre_install": "if (!(Test-Path \"$persist_dir\\app.conf\")) { Set-Content \"$dir\\app.conf\" '{}' -Encoding Ascii }",
     "bin": "WindowsSpyBlocker.exe",
     "shortcuts": [
         [
@@ -13,11 +14,6 @@
         ]
     ],
     "persist": "app.conf",
-    "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\app.conf\")) {",
-        "    New-Item -Force -Path \"$dir\" -Name app.conf -Value '{}' | Out-Null",
-        "}"
-    ],
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/crazy-max/WindowsSpyBlocker/releases/download/$version/WindowsSpyBlocker.exe"

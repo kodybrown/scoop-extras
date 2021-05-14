@@ -1,16 +1,16 @@
 {
-    "version": "7.3.0",
+    "version": "7.9.0",
     "description": "Privacy enhanced BitTorrent client with P2P content discovery",
-    "homepage": "http://www.tribler.org",
+    "homepage": "https://www.tribler.org",
     "license": "LGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Tribler/tribler/releases/download/v7.3.0/Tribler_7.3.0_x64.exe#/dl.7z",
-            "hash": "7929c6d036ca3e2d004d9bf16e091c579418a9c483cf2500822813d850d3b26e"
+            "url": "https://github.com/Tribler/tribler/releases/download/v7.9.0/Tribler_7.9.0_x64.exe#/dl.7z",
+            "hash": "cbb41ccb91004a264c1a7a3d7bc2084590af993502edcad3d4d9921e6bafb739"
         },
         "32bit": {
-            "url": "https://github.com/Tribler/tribler/releases/download/v7.3.0/Tribler_7.3.0_x86.exe#/dl.7z",
-            "hash": "8e792bdc6dc62932e43ea5c478da02b70d019c9300cfa458fd6ec6db0462d28b"
+            "url": "https://github.com/Tribler/tribler/releases/download/v7.9.0/Tribler_7.9.0_x86.exe#/dl.7z",
+            "hash": "102cbf34d92809a9f09ce8c6058b1b43bfbbc8a52f3cd44327e2c764843bb227"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",

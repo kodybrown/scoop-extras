@@ -1,34 +1,30 @@
 {
+    "version": "4.0.1.6051",
+    "description": "Hosts management & switching",
     "homepage": "https://oldj.github.io/SwitchHosts/",
-    "version": "3.4.0",
     "license": "MIT",
-    "description": "App for hosts management & switching.",
-    "url": "https://github.com/oldj/SwitchHosts/releases/download/v3.4.0/SwitchHosts._windows_installer_3.4.0.5450.exe#/dl.7z",
-    "hash": "9cf0901d733fdd2ad6b00a2de9ff97b3c230e8a0616da83fa487ab33970e5c1b",
+    "url": "https://github.com/oldj/SwitchHosts/releases/download/v4.0.1/SwitchHosts_installer_4.0.1.6051.exe#/dl.7z",
+    "hash": "4dcea153b3b3398d7bf10dc36183008d78b7f3ec36a7d409ad1b46b74577e78b",
     "architecture": {
         "64bit": {
-            "installer": {
-                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
-            }
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         },
         "32bit": {
-            "installer": {
-                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
-            }
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
         }
     },
-    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse",
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse",
     "shortcuts": [
         [
-            "SwitchHosts!.exe",
-            "SwitchHosts!"
+            "SwitchHosts.exe",
+            "SwitchHosts"
         ]
     ],
     "checkver": {
         "github": "https://github.com/oldj/SwitchHosts",
-        "regex": "windows_installer_([\\d.]+)\\.(?<build>\\d+)\\.exe"
+        "regex": "SwitchHosts_installer_([\\d.]+)\\.exe"
     },
     "autoupdate": {
-        "url": "https://github.com/oldj/SwitchHosts/releases/download/v$version/SwitchHosts._windows_installer_$version.$matchBuild.exe#/dl.7z"
+        "url": "https://github.com/oldj/SwitchHosts/releases/download/v$matchHead/SwitchHosts_installer_$version.exe#/dl.7z"
     }
 }

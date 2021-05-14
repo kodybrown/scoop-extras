@@ -1,16 +1,16 @@
 {
-    "version": "11.1",
-    "homepage": "https://netbeans.org",
+    "version": "12.3",
     "description": "Quickly and easily develop desktop, mobile, and web applications with Java, JavaScript, HTML5, PHP, C/C++ and more.",
+    "homepage": "https://netbeans.org",
     "license": "Apache-2.0",
-    "url": "https://www.apache.org/dist/netbeans/netbeans/11.1/netbeans-11.1-bin.zip",
-    "hash": "sha512:bb061b9258d524b7b53b3b5ee9aa95111f7a391a5e2c5c0bc949164166af9a03d0cebbde2b47a8853fb765307b4c93ce8389a9c87bef26c92c08cdf446314e4d",
+    "url": "https://www.apache.org/dist/netbeans/netbeans/12.3/netbeans-12.3-bin.zip",
+    "hash": "sha512:d38abd8312010837cffbe9b1c721a1e14a33735b766c09a0b640adf1360c439b3d68df032f420afb6af060e054c92dc07436fb50d33823b8fed996cbd824e39d",
     "extract_dir": "netbeans",
     "architecture": {
         "64bit": {
             "shortcuts": [
                 [
-                    "bin/netbeans64.exe",
+                    "bin\\netbeans64.exe",
                     "Netbeans"
                 ]
             ]
@@ -18,7 +18,7 @@
         "32bit": {
             "shortcuts": [
                 [
-                    "bin/netbeans.exe",
+                    "bin\\netbeans.exe",
                     "Netbeans"
                 ]
             ]

@@ -1,10 +1,10 @@
 {
-    "version": "1.8.0",
+    "version": "2.10.0",
     "description": "Simplenote is an easy way to keep notes, lists, ideas and more. Your notes stay in sync with all your devices for free.",
     "homepage": "https://simplenote.com",
     "license": "GPL-2.0-only",
-    "url": "https://github.com/Automattic/simplenote-electron/releases/download/v1.8.0/Simplenote-win-1.8.0.exe#/dl.7z",
-    "hash": "sha512:0204b7f0040a662ac3c09a59e4eb4b0d39aad71be77835b36619ab2d72ae61a5886dea435c7a928936ad9e1f0ab7202c41c1a717485e4a130fb6cc3d564d6f08",
+    "url": "https://github.com/Automattic/simplenote-electron/releases/download/v2.10.0/Simplenote-win-2.10.0.exe#/dl.7z",
+    "hash": "sha512:4420743f62353fd4ec78554d0c81ee89901a7901496529121660f41ded031c89f7d41d1a40d8e9c05f85ee05815ffdeaf642720ebdc47fea55df756ea9b9d6bd",
     "architecture": {
         "64bit": {
             "installer": {

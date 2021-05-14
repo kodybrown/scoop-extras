@@ -1,14 +1,18 @@
 {
-    "homepage": "https://www.qutebrowser.org/",
-    "description": "A keyboard-focused browser with a minimal GUI.",
+    "version": "2.2.1",
+    "description": "A keyboard-focused browser with a minimal GUI",
+    "homepage": "https://www.qutebrowser.org",
     "license": "GPL-3.0-only",
-    "version": "1.7.0",
-    "persist": "config",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v1.7.0/qutebrowser-1.7.0-windows-standalone-amd64.zip",
-            "hash": "04136020b84d1c51fe38c6d9e11f03c7b92f07506c75ae7815b91f79bdad6cab",
-            "extract_dir": "qutebrowser-1.7.0-x64"
+            "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v2.2.1/qutebrowser-2.2.1-windows-standalone-amd64.zip",
+            "hash": "3896abd5fb2954fb7cef9d14318eb2a1d5c7cbc4f37fc30ab50c425cc05a6fc9",
+            "extract_dir": "qutebrowser-2.2.1-x64"
+        },
+        "32bit": {
+            "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v2.2.1/qutebrowser-2.2.1-windows-standalone-win32.zip",
+            "hash": "251a51b939796a1e6fd32f0202e8027c3d1ca69ca1804cc575318a7dcf7186ae",
+            "extract_dir": "qutebrowser-2.2.1-x86"
         }
     },
     "bin": "qutebrowser.exe",
@@ -18,6 +22,7 @@
             "qutebrowser"
         ]
     ],
+    "persist": "config",
     "checkver": {
         "github": "https://github.com/qutebrowser/qutebrowser"
     },
@@ -26,6 +31,10 @@
             "64bit": {
                 "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v$version/qutebrowser-$version-windows-standalone-amd64.zip",
                 "extract_dir": "qutebrowser-$version-x64"
+            },
+            "32bit": {
+                "url": "https://github.com/qutebrowser/qutebrowser/releases/download/v$version/qutebrowser-$version-windows-standalone-win32.zip",
+                "extract_dir": "qutebrowser-$version-x86"
             }
         }
     }

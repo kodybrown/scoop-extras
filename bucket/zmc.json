@@ -1,17 +1,15 @@
 {
-    "homepage": "https://www.azul.com/products/zulu-mission-control",
-    "version": "7.0.0.49",
+    "version": "8.0.0.17",
     "description": "A build of JDK Mission Control, an open source Java runtime profiling and monitoring utility.",
+    "homepage": "https://www.azul.com/products/components/zulu-mission-control/",
     "license": "UPL-1.0",
     "architecture": {
         "64bit": {
-            "url": "http://static.azul.com/zmc/bin/zmc7.0.0.49-ca-win_x64.zip",
-            "hash": "b0cc73a11fa6b84aaee2552e12ec6cf49df5208c56a743d3d5358b3b30a0eaa6",
-            "extract_dir": "zmc7.0.0.49-ca-win_x64"
+            "url": "http://static.azul.com/zmc/bin/zmc8.0.0.17-ca-win_x64.zip",
+            "hash": "d01a2061b5ddee4817e853fd1b02a4a10e93525260d4196a0bea8b96e1e239d9",
+            "extract_dir": "zmc8.0.0.17-ca-win_x64"
         }
     },
-    "persist": "configuration",
-    "checkver": "zmc([\\d.]+)-ca-win",
     "bin": "zmc.exe",
     "shortcuts": [
         [
@@ -19,6 +17,8 @@
             "Zulu Mission Control"
         ]
     ],
+    "persist": "configuration",
+    "checkver": "zmc([\\d.]+)-ca-win",
     "autoupdate": {
         "architecture": {
             "64bit": {

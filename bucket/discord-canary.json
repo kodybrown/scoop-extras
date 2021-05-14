@@ -1,15 +1,15 @@
 {
-    "homepage": "https://discordapp.com/",
+    "version": "0.0.305",
     "description": "Free Voice and Text Chat",
+    "homepage": "https://discordapp.com/",
     "license": {
         "identifier": "Freeware",
         "url": "https://discordapp.com/terms"
     },
-    "version": "0.0.256",
-    "url": "http://dl-canary.discordapp.net/apps/win/DiscordCanary-0.0.256-full.nupkg#/dl.7z",
-    "hash": "sha1:a3924a044c399d12334ea9b88880629c56c56575",
-    "bin": "DiscordCanary.exe",
+    "url": "http://dl-canary.discordapp.net/apps/win/DiscordCanary-0.0.305-full.nupkg#/dl.7z",
+    "hash": "sha1:4ba568363750b1661d145ce6a771e9a16ac192b6",
     "extract_dir": "lib\\net45",
+    "bin": "DiscordCanary.exe",
     "shortcuts": [
         [
             "DiscordCanary.exe",
@@ -18,7 +18,7 @@
     ],
     "checkver": {
         "url": "https://discordapp.com/api/updates/canary/RELEASES",
-        "re": "DiscordCanary-([\\d.]+)"
+        "regex": "DiscordCanary-([\\d.]+)"
     },
     "autoupdate": {
         "url": "http://dl-canary.discordapp.net/apps/win/DiscordCanary-$version-full.nupkg#/dl.7z",

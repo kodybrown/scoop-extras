@@ -1,16 +1,15 @@
 {
-    "homepage": "https://www.hex-rays.com/products/ida/index.shtml",
+    "version": "7.6",
     "description": "A multi-processor disassembler and debugger that offers so many features it is hard to describe them all",
+    "homepage": "https://www.hex-rays.com/products/ida/index.shtml",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.hex-rays.com/products/ida/licenses.shtml"
     },
-    "version": "7.0",
-    "innosetup": true,
     "architecture": {
         "64bit": {
-            "url": "https://out7.hex-rays.com/files/idafree70_windows.exe",
-            "hash": "sha1:d19d34bfc609e28cbfd92c1468c330d032130ec3",
+            "url": "https://out7.hex-rays.com/files/idafree76_windows.exe",
+            "hash": "sha1:1923da63b033063d7cbcecdb05d62de42e929cb6",
             "bin": "ida64.exe",
             "shortcuts": [
                 [
@@ -19,6 +18,19 @@
                 ]
             ]
         }
+    },
+    "pre_install": "if (!(is_admin)) { error 'Administrator privileges are required'; break }",
+    "installer": {
+        "args": [
+            "--mode unattended",
+            "--unattendedmodeui minimal",
+            "--installpassword freeware",
+            "--prefix \"$dir\""
+        ]
+    },
+    "uninstaller": {
+        "file": "uninstall.exe",
+        "args": "--mode unattended"
     },
     "checkver": {
         "url": "https://www.hex-rays.com/products/ida/support/download_freeware.shtml",

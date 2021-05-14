@@ -1,23 +1,19 @@
 {
-    "homepage": "https://standardnotes.org/",
-    "version": "3.0.15",
+    "version": "3.6.9",
     "description": "A safe place for your notes, thoughts, and life's work.",
+    "homepage": "https://standardnotes.org/",
     "license": "AGPL-3.0-or-later",
-    "url": "https://github.com/standardnotes/desktop/releases/download/v3.0.15/standard-notes-setup-3.0.15.exe#/dl.7z",
-    "hash": "sha512:d6a1910de2c94649144729b4f06a3403c57def04613382db66c4555703d93ba612ee11d7d9a78a881b781a444ef7b6a7f8e5b7001ffe9eb3ebfb900c762b4667",
+    "url": "https://github.com/standardnotes/desktop/releases/download/v3.6.9/standard-notes-3.6.9-win.exe#/dl.7z",
+    "hash": "sha512:660369adfed55b1383c3ff6ff5d2bb7761ec4e0f8ed44a9346c51451429d92b50b7f61698c98122b0b0f1588610c7cb29811882b5722499a9dbc5fba2e6c3415",
     "architecture": {
         "64bit": {
-            "installer": {
-                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
-            }
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
         },
         "32bit": {
-            "installer": {
-                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
-            }
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
         }
     },
-    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\" -Recurse",
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse",
     "bin": "Standard Notes.exe",
     "shortcuts": [
         [
@@ -29,7 +25,7 @@
         "github": "https://github.com/standardnotes/desktop"
     },
     "autoupdate": {
-        "url": "https://github.com/standardnotes/desktop/releases/download/v$version/standard-notes-setup-$version.exe#/dl.7z",
+        "url": "https://github.com/standardnotes/desktop/releases/download/v$version/standard-notes-$version-win.exe#/dl.7z",
         "hash": {
             "url": "$baseurl/latest.yml",
             "regex": "sha512:\\s+$base64"

@@ -1,18 +1,19 @@
 {
-    "description": "Pale Moon is an Open Source, Mozilla-derived web browser available for Microsoft Windows and Linux, focusing on efficiency and ease of use",
-    "homepage": "https://www.palemoon.org/",
-    "version": "28.7.0",
+    "version": "29.2.0",
+    "description": "Mozilla-derived web browser focusing on efficiency and customization",
+    "homepage": "https://www.palemoon.org",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "http://rm-eu.palemoon.org/release/palemoon-28.7.0.win64.zip",
-            "hash": "fbe5e35009e11672589114bd3e856c7d7e1a2fb34a6a81f11790cce56b10a642"
+            "url": "https://rm-eu.palemoon.org/release/palemoon-29.2.0.win64.7z",
+            "hash": "d05a91bfbfdcd10cf3754c22fa47657834fba42bd784d3357cb2aecc2049b7df"
         },
         "32bit": {
-            "url": "http://rm-eu.palemoon.org/release/palemoon-28.7.0.win32.zip",
-            "hash": "aba2b11d5d1ef5b870d3e5aca16fc801a4a03d36aea8c0821431003451d43283"
+            "url": "https://rm-eu.palemoon.org/release/palemoon-29.2.0.win32.7z",
+            "hash": "6a8a1467360951f0f40dd382139624ab6de7614ca436d1487374e10818834c2b"
         }
     },
+    "extract_dir": "palemoon",
     "bin": "palemoon.exe",
     "shortcuts": [
         [
@@ -20,23 +21,22 @@
             "Pale Moon"
         ]
     ],
-    "extract_dir": "palemoon",
     "checkver": {
         "url": "https://www.palemoon.org/download.shtml",
-        "re": "Hashes for release ([\\d\\.]+)"
+        "regex": "Hashes for release ([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "http://rm-eu.palemoon.org/release/palemoon-$version.win64.zip"
+                "url": "https://rm-eu.palemoon.org/release/palemoon-$version.win64.7z"
             },
             "32bit": {
-                "url": "http://rm-eu.palemoon.org/release/palemoon-$version.win32.zip"
+                "url": "https://rm-eu.palemoon.org/release/palemoon-$version.win32.7z"
             }
         },
         "hash": {
             "url": "https://www.palemoon.org/download.shtml",
-            "find": "$basename\\s+([a-fA-F\\d]{64})"
+            "regex": "$basename\\s+$sha256"
         }
     }
 }

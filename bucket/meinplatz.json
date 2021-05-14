@@ -1,0 +1,46 @@
+{
+    "version": "6.91",
+    "description": "Hard disk scan and folder size tool",
+    "homepage": "http://www.softwareok.com/?seite=Freeware/MeinPlatz",
+    "license": {
+        "identifier": "Freeware",
+        "url": "http://www.softwareok.com/?seite=Freeware/MeinPlatz/Eula"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://www.softwareok.com/Download/MeinPlatz_Portable_x64.zip",
+            "hash": "11dcdfae8231ae72153bc2ec8547bdb198087d902c5540f057dd1e98fc9e6338"
+        },
+        "32bit": {
+            "url": "https://www.softwareok.com/Download/MeinPlatz_Portable.zip",
+            "hash": "ad4f07618e4cd34f2bb6e72927a475d0acb1a7e933d9a68e7c9e9751ee32f2ab"
+        }
+    },
+    "extract_dir": "MeinPlatz",
+    "bin": "MeinPlatz.exe",
+    "shortcuts": [
+        [
+            "MeinPlatz.exe",
+            "MeinPlatz"
+        ]
+    ],
+    "persist": "MeinPlatz.ini",
+    "checkver": {
+        "url": "https://www.softwareok.com/?seite=Microsoft/MeinPlatz/History",
+        "regex": "New in version ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.softwareok.com/Download/MeinPlatz_Portable_x64.zip"
+            },
+            "32bit": {
+                "url": "https://www.softwareok.com/Download/MeinPlatz_Portable.zip"
+            }
+        },
+        "hash": {
+            "url": "https://www.softwareok.com/?Download=MeinPlatz",
+            "regex": "$basename.*?$sha256<"
+        }
+    }
+}

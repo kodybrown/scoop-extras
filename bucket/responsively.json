@@ -1,0 +1,36 @@
+{
+    "version": "0.16.0",
+    "description": "Modified web browser for responsive web development",
+    "homepage": "https://manojvivek.github.io/responsively-app/",
+    "license": "AGPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/manojVivek/responsively-app/releases/download/v0.16.0/ResponsivelyApp-Setup-0.16.0.exe#/dl.7z",
+            "hash": "sha512:e044dcc278868c3c21be774cad1926059eb796e9b40b68c0443a8af7c6baf672c04b16f4fd37f69f11099e68cdfdb99f8f1489c8d7218a64742016470c13436f",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" -DestinationPath \"$dir\"",
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Recurse"
+            ]
+        }
+    },
+    "shortcuts": [
+        [
+            "ResponsivelyApp.exe",
+            "Responsively"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/manojVivek/responsively-app"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/manojVivek/responsively-app/releases/download/v$version/ResponsivelyApp-Setup-$version.exe#/dl.7z",
+                "hash": {
+                    "url": "$baseurl/latest.yml",
+                    "regex": "sha512:\\s+$base64"
+                }
+            }
+        }
+    }
+}

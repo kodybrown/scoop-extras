@@ -1,40 +1,36 @@
 {
-    "homepage": "https://openmpt.org/",
-    "description": "Powerful audio application that makes writing music fun, easy and efficient.",
+    "version": "1.29.09.00",
+    "description": "Music tracker",
+    "homepage": "https://openmpt.org",
     "license": "BSD-3-Clause",
-    "version": "1.28.06.00",
     "architecture": {
-        "32bit": {
-            "url": "https://download.openmpt.org/OpenMPT-1.28.06.00-Setup.exe",
-            "hash": "sha1:7556e76a9a22679b4e9d9d9d67799f3eb9b4c53b"
-        },
         "64bit": {
-            "url": "https://download.openmpt.org/OpenMPT-1.28.06.00-Setup-x64.exe",
-            "hash": "sha1:f06dd6e0cea62e32460b513eab5bd08e66e3a49c"
+            "url": "https://download.openmpt.org/archive/openmpt/1.29/OpenMPT-1.29.09.00-Setup-x64.exe",
+            "hash": "sha1:0caff4467bc99c687e551bffc63a6b5a17e39689"
+        },
+        "32bit": {
+            "url": "https://download.openmpt.org/archive/openmpt/1.29/OpenMPT-1.29.09.00-Setup.exe",
+            "hash": "sha1:88d02569d68ca05f01a0c2a45009b0b62681d1fa"
         }
     },
     "innosetup": true,
-    "pre_install": [
-        "Remove-Item \"$dir\\*,2*\" -Force",
-        "Get-ChildItem \"$dir\" '*,1*' | ForEach-Object { Rename-Item $_.Fullname \"$($_.Basename.TrimEnd(',1'))$($_.Extension)\" }"
-    ],
     "shortcuts": [
         [
-            "mptrack.exe",
+            "OpenMPT.exe",
             "OpenMPT"
         ]
     ],
     "checkver": {
-        "url": "https://openmpt.org/download",
-        "regex": "OpenMPT ([\\d.]+)"
+        "url": "https://update.openmpt.org/check/1.29.00.00-win64-unknown/anonymous",
+        "regex": "^update\\s+([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
-            "32bit": {
-                "url": "https://download.openmpt.org/OpenMPT-$version-Setup.exe"
-            },
             "64bit": {
-                "url": "https://download.openmpt.org/OpenMPT-$version-Setup-x64.exe"
+                "url": "https://download.openmpt.org/archive/openmpt/$majorVersion.$minorVersion/OpenMPT-$version-Setup-x64.exe"
+            },
+            "32bit": {
+                "url": "https://download.openmpt.org/archive/openmpt/$majorVersion.$minorVersion/OpenMPT-$version-Setup.exe"
             }
         },
         "hash": {

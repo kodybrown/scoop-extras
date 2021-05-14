@@ -1,16 +1,22 @@
 {
-    "homepage": "https://www.hwinfo.com/",
-    "description": "Comprehensive Hardware Analysis, Monitoring and Reporting for Windows and DOS.",
-    "version": "6.10-3880",
-    "license": "Unknown",
+    "version": "7.02-4430",
+    "description": "Comprehensive Hardware Analysis, Monitoring and Reporting for Windows and DOS",
+    "homepage": "https://www.hwinfo.com",
+    "license": "Freeware",
+    "url": "https://www.hwinfo.com/files/hwi_702.zip",
+    "hash": "2e7a807f80ecf2a7e8ea9bf4e6cfc5e3afc6517c5a3ee48dc03c7f49a669d039",
+    "pre_install": [
+        "'64' | ForEach-Object {",
+        "    if (-not (Test-Path \"$persist_dir\\HWiNFO$_.INI\")) { Set-Content \"$dir\\HWiNFO$_.INI\" '[Settings]', 'AutoUpdate=0' -Encoding Ascii}",
+        "}"
+    ],
     "architecture": {
         "64bit": {
-            "url": "https://www.hwinfo.com/files/hwi_610.zip",
-            "hash": "3026d06bcf2e199dbd49d07b1371ffa50369e4acb9d353b52b5d9c00660ab4d0",
             "bin": [
+                "HWiNFO64.exe",
                 [
                     "HWiNFO64.exe",
-                    "HWiNFO64"
+                    "HWiNFO"
                 ]
             ],
             "shortcuts": [
@@ -21,12 +27,11 @@
             ]
         },
         "32bit": {
-            "url": "https://www.hwinfo.com/files/hwi_610.zip",
-            "hash": "3026d06bcf2e199dbd49d07b1371ffa50369e4acb9d353b52b5d9c00660ab4d0",
             "bin": [
+                "HWiNFO32.exe",
                 [
                     "HWiNFO32.exe",
-                    "HWiNFO32"
+                    "HWiNFO"
                 ]
             ],
             "shortcuts": [
@@ -43,16 +48,9 @@
     ],
     "checkver": {
         "url": "https://www.hwinfo.com/ver.txt",
-        "re": "([\\d.]+-\\d+)"
+        "regex": "([\\d-.]+)"
     },
     "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://www.hwinfo.com/files/hwi_$majorVersion$minorVersion.zip"
-            },
-            "32bit": {
-                "url": "https://www.hwinfo.com/files/hwi_$majorVersion$minorVersion.zip"
-            }
-        }
+        "url": "https://www.hwinfo.com/files/hwi_$majorVersion$minorVersion.zip"
     }
 }

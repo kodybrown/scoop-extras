@@ -1,22 +1,49 @@
 {
-    "homepage": "https://mikrotik.com/",
+    "version": "3.27",
     "description": "A small utility that allows administration of MikroTik RouterOS using a fast and simple GUI.",
-    "version": "3.19",
+    "homepage": "https://mikrotik.com/",
     "license": "Unknown",
-    "url": "https://download2.mikrotik.com/routeros/winbox/3.19/winbox.exe",
-    "hash": "494ce796164c1a2dae4ca37e3ea277866068fd736fbb09dd651cb22923faee5a",
-    "bin": "winbox.exe",
-    "shortcuts": [
-        [
-            "winbox.exe",
-            "RouterOS Winbox"
-        ]
-    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://download.mikrotik.com/winbox/3.27/winbox64.exe",
+            "hash": "4f93916c73dbcfc9702c035bd7e22a80c80bf2c97811c9a143c30152a336faed",
+            "bin": [
+                [
+                    "winbox64.exe",
+                    "winbox"
+                ]
+            ],
+            "shortcuts": [
+                [
+                    "winbox64.exe",
+                    "RouterOS Winbox"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://download.mikrotik.com/winbox/3.27/winbox.exe",
+            "hash": "8e16495f351f277e797800c33fa221a3423a5a33aa967c1adb6d71c9d35e3842",
+            "bin": "winbox.exe",
+            "shortcuts": [
+                [
+                    "winbox.exe",
+                    "RouterOS Winbox"
+                ]
+            ]
+        }
+    },
     "checkver": {
-        "url": "https://mikrotik.com/download/",
-        "re": "routeros/winbox/([\\d.]+)/winbox.exe"
+        "url": "https://mikrotik.com/download",
+        "regex": "WinBox ([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://download2.mikrotik.com/routeros/winbox/$version/winbox.exe"
+        "architecture": {
+            "64bit": {
+                "url": "https://download.mikrotik.com/winbox/$version/winbox64.exe"
+            },
+            "32bit": {
+                "url": "https://download.mikrotik.com/winbox/$version/winbox.exe"
+            }
+        }
     }
 }

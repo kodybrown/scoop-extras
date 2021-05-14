@@ -1,19 +1,19 @@
 {
-    "homepage": "https://www.realvnc.com/download/viewer",
+    "version": "6.20.529",
     "description": "Control VNC enabled computers.",
-    "version": "6.19.715",
+    "homepage": "https://www.realvnc.com/download/viewer",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.realvnc.com/en/legal/#eulas"
     },
     "architecture": {
         "64bit": {
-            "url": "https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.19.715-Windows-64bit.exe#/vncviewer.exe",
-            "hash": "def60e0a08fe0f21183f486b2caa2f3ef9eb50fffa82efe925377152224b77f0"
+            "url": "https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.20.529-Windows-64bit.exe#/vncviewer.exe",
+            "hash": "d540535fec1eba23f6ca5d81c74c6e2294d04951cdc768b25c8d661755834c62"
         },
         "32bit": {
-            "url": "https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.19.715-Windows-32bit.exe#/vncviewer.exe",
-            "hash": "603178e49670770b59b3c6295f87223ca8a1fcb01cbf0fdce0f875f607c59a00"
+            "url": "https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.20.529-Windows-32bit.exe#/vncviewer.exe",
+            "hash": "0bf49c92f3b944c59cd2406b949f96876722aae9d5cb2aa4e3ce87213a4319ac"
         }
     },
     "bin": "vncviewer.exe",
