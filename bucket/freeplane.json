@@ -1,17 +1,17 @@
 {
-    "version": "1.8.11",
+    "version": "1.10.6u1",
     "description": "Freeplane is a free and open source software application that supports thinking, sharing information and getting things done at work, in school and at home. The software can be used for mind mapping and analyzing the information contained in mind maps.",
     "homepage": "https://www.freeplane.org",
     "license": "GPL-2.0-or-later",
     "suggest": {
         "JDK": [
-            "java/oraclejdk",
-            "java/openjdk"
+            "java/openjdk11",
+            "java/openjdk17"
         ]
     },
-    "url": "https://downloads.sourceforge.net/project/freeplane/freeplane%20stable/archive/1.8.11/freeplane_bin-1.8.11.zip",
-    "hash": "sha1:1038fc4e3b5fa86643e6d49d225fd811936c95fa",
-    "extract_dir": "freeplane-1.8.11",
+    "url": "https://downloads.sourceforge.net/project/freeplane/freeplane%20stable/freeplane_bin-1.10.6u1.zip",
+    "hash": "sha1:e7548978a52a668d912756c16588a296365e9dba",
+    "extract_dir": "freeplane-1.10.6u1",
     "bin": "freeplane.exe",
     "shortcuts": [
         [
@@ -20,11 +20,11 @@
         ]
     ],
     "checkver": {
-        "url": "https://www.freeplane.org/info/history/history_en.txt",
-        "regex": "=\\s+([\\d.]+)\\s+="
+        "sourceforge": "freeplane/freeplane stable",
+        "regex": "freeplane_bin-(.*)\\.zip"
     },
     "autoupdate": {
-        "url": "https://downloads.sourceforge.net/project/freeplane/freeplane%20stable/archive/$version/freeplane_bin-$version.zip",
+        "url": "https://downloads.sourceforge.net/project/freeplane/freeplane%20stable/freeplane_bin-$version.zip",
         "extract_dir": "freeplane-$version"
     }
 }

@@ -1,19 +1,19 @@
 {
-    "version": "1.9.1",
+    "version": "1.16.0",
     "description": "Microscopic and continuous traffic simulation package designed to handle large networks",
     "homepage": "https://www.eclipse.org/sumo/",
     "license": "EPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://sumo.dlr.de/releases/1.9.1/sumo-win64-1.9.1.zip",
-            "hash": "7fadf7701d83d3186c780b8d329193732886e85167fa1304df201fdd995e0168"
+            "url": "https://sumo.dlr.de/releases/1.16.0/sumo-win64-1.16.0.zip",
+            "hash": "568f056e2df4d36d7b2facc36a3ee5c84863d0fc729389d4ea8da4643cc76712"
         },
         "32bit": {
-            "url": "https://sumo.dlr.de/releases/1.9.1/sumo-win32-1.9.1.zip",
-            "hash": "58ee642fe6dcee411ff0bd45b90a558cf36119e3467fdb7e4514142af75edd51"
+            "url": "https://sumo.dlr.de/releases/1.16.0/sumo-win32-1.16.0.zip",
+            "hash": "20900ff79520b3d9a5b23ce20ef4cab9da08cb0f57216a84a42b88fca0e6fadd"
         }
     },
-    "extract_dir": "sumo-1.9.1",
+    "extract_dir": "sumo-1.16.0",
     "bin": [
         "bin\\activitygen.exe",
         "bin\\dfrouter.exe",

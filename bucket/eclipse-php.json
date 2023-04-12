@@ -1,12 +1,12 @@
 {
-    "version": "2021-03",
+    "version": "2023-03",
     "description": "Eclipse IDE for PHP Developers",
     "homepage": "https://www.eclipse.org",
     "license": "EPL-1.0",
     "architecture": {
         "64bit": {
-            "url": "http://download.eclipse.org/technology/epp/downloads/release/2021-03/R/eclipse-php-2021-03-R-win32-x86_64.zip",
-            "hash": "sha512:ce31d429d0734343ac0a3a294761214129ad5c19d136f5677405255f82fd2b6e295fef1c37018669fcbb07fc6ee9e6a2ffc8064f18bd4f41f12880987b037af4"
+            "url": "http://download.eclipse.org/technology/epp/downloads/release/2023-03/R/eclipse-php-2023-03-R-win32-x86_64.zip",
+            "hash": "sha512:0f2798afd99fe2ef9f8c6b597117be252b8f63560e5d7ffc0d1397a53b5cfd2e68ed61b368e775a7378ec92620edf815ff4fb30cb8d90edac5c639423d520e11"
         }
     },
     "extract_dir": "eclipse",

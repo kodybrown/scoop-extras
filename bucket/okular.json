@@ -1,34 +1,34 @@
 {
-    "version": "20.12.3-612",
+    "version": "22.12.3",
     "description": "Universal document viewer",
     "homepage": "https://okular.kde.org",
     "license": "LGPL-2.0-only",
+    "notes": "If you want to get the latest development branch-based installer, please install `okular-nightly` from Versions bucket.",
     "architecture": {
         "64bit": {
-            "url": "https://binary-factory.kde.org/view/Windows%2064-bit/job/Okular_Release_win64/612/artifact/okular-20.12.3-612-windows-msvc2019_64-cl.7z",
-            "hash": "d806ca8d29f3db2700ef10d8786a3daf4c212d3bbc992da325409aa23daf21d1"
+            "url": "https://binary-factory.kde.org/job/Okular_Release_win64/1350/artifact/okular-22.12.3-1350-windows-cl-msvc2019-x86_64.7z",
+            "hash": "09d0eb10e0f122d7fad99152167e481fe16474bf98439e5fb65a35148528bf43"
         }
     },
     "bin": "bin\\okular.exe",
     "shortcuts": [
         [
             "bin\\okular.exe",
-            "okular"
+            "Okular"
         ]
     ],
     "checkver": {
-        "url": "https://binary-factory.kde.org/view/Windows%2064-bit/job/Okular_Release_win64/lastSuccessfulBuild/artifact/",
-        "regex": "okular-([\\d.-]+)-windows"
+        "url": "https://binary-factory.kde.org/job/Okular_Release_win64/",
+        "regex": "okular-([\\d.]+)-(?<build>[\\d]+)-windows-cl-(?<lib>\\w+)-x86_64\\.7z"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://binary-factory.kde.org/view/Windows%2064-bit/job/Okular_Release_win64/$preReleaseVersion/artifact/okular-$version-windows-msvc2019_64-cl.7z"
+                "url": "https://binary-factory.kde.org/job/Okular_Release_win64/$matchBuild/artifact/okular-$version-$matchBuild-windows-cl-$matchLib-x86_64.7z",
+                "hash": {
+                    "url": "$url.sha256"
+                }
             }
-        },
-        "hash": {
-            "url": "$url.sha256",
-            "regex": "$sha256"
         }
     }
 }

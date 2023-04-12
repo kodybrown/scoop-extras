@@ -1,16 +1,16 @@
 {
-    "version": "1.13",
+    "version": "1.26",
     "description": "A stand-alone graphics debugging tool",
     "homepage": "https://renderdoc.org",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://renderdoc.org/stable/1.13/RenderDoc_1.13_64.msi",
-            "hash": "b089473c0625ad3699d9c7cfb72cee398f58fe394fb1fff95af8350d2f2e38c2"
+            "url": "https://renderdoc.org/stable/1.26/RenderDoc_1.26_64.msi",
+            "hash": "359fe4355770c52b8408158bd18e90cfc803d18c18977d4c4a27946dd66731d7"
         },
         "32bit": {
-            "url": "https://renderdoc.org/stable/1.13/RenderDoc_1.13_32.msi",
-            "hash": "715ed17d9a3bb6edd8b2972fc8921f19d52040689552ef72f28747fbf781d9bb"
+            "url": "https://renderdoc.org/stable/1.26/RenderDoc_1.26_32.msi",
+            "hash": "a66ff7548e0823cbc597f34decef68091c9549a99a2ba5d74f2ca8b79bf8b378"
         }
     },
     "extract_dir": "PFiles\\RenderDoc",

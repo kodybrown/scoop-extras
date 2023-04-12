@@ -1,19 +1,35 @@
 {
-    "version": "2.1.6",
+    "version": "2.2.3",
     "description": "A suite of tools for lossless audio/CUE sheet format conversion and verification.",
     "homepage": "http://cue.tools/wiki/Main_Page",
-    "license": "Public Domain",
+    "license": "GPL-2.0-or-later",
     "suggest": {
         "vcredist": "extras/vcredist2008"
     },
-    "url": "http://www.cuetools.net/install/CUETools_2.1.6.zip",
-    "hash": "sha512:27f74d40852cf18091ece091b00bbc18ab177b1814ee922ef98a35158591705bdeb5bdc27e3aa926e6a6523dd59ea9cee90c121eb58c0cd01851c69f0c058712",
-    "extract_dir": "CUETools_2.1.6",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/gchudov/cuetools.net/releases/download/v2.2.3/CUETools_2.2.3.zip",
+            "hash": "017484aab76040737713a9a638eb696db63df0a5f792973744b36a41bd60fb98"
+        }
+    },
+    "extract_dir": "CUETools_2.2.3",
     "post_install": "Remove-Item \"$dir\\user_profiles_enabled\"",
-    "bin": [
-        "CUERipper.exe",
-        "CUETools.exe"
+    "pre_install": [
+        "if (Test-Path \"$persist_dir\\CUE Tools\\settings.txt\") {",
+        "    Copy-Item \"$persist_dir\\CUE Tools\\settings.txt\" \"$dir\\CUE Tools\\settings.txt\" -Force",
+        "}",
+        "if (Test-Path \"$persist_dir\\CUERipper\\settings.txt\") {",
+        "    Copy-Item \"$persist_dir\\CUERipper\\settings.txt\" \"$dir\\CUERipper\\settings.txt\" -Force",
+        "}"
     ],
+    "uninstaller": {
+        "script": [
+            "ensure \"$persist_dir\" | Out-Null",
+            "Copy-Item \"$dir\\CUE Tools\\settings.txt\" \"$persist_dir\\CUE Tools\\settings.txt\" -Force",
+            "Copy-Item \"$dir\\CUERipper\\settings.txt\" \"$persist_dir\\CUERipper\\settings.txt\" -Force"
+        ]
+    },
+    "bin": "CUETools.Ripper.Console.exe",
     "shortcuts": [
         [
             "CUERipper.exe",
@@ -24,8 +40,15 @@
             "CUETools"
         ]
     ],
-    "persist": [
-        "CUE Tools\\settings.txt",
-        "CUERipper\\settings.txt"
-    ]
+    "checkver": {
+        "github": "https://github.com/gchudov/cuetools.net"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/gchudov/cuetools.net/releases/download/v$version/CUETools_$version.zip"
+            }
+        },
+        "extract_dir": "CUETools_$version"
+    }
 }

@@ -1,5 +1,5 @@
 {
-    "version": "8.4.0",
+    "version": "10.12.13",
     "description": "Complete API development environment.",
     "homepage": "https://www.getpostman.com/",
     "license": {
@@ -8,19 +8,19 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.pstmn.io/download/8.4.0/Postman-win64-8.4.0-full.nupkg#/dl.7z",
-            "hash": "sha1:cd585383c104fc441f524b41e0cb9c95a1e29991"
-        },
-        "32bit": {
-            "url": "https://dl.pstmn.io/download/8.4.0/Postman-win32-8.4.0-full.nupkg#/dl.7z",
-            "hash": "sha1:386f4f42de5db8d4a74bca9c44382e16e62b2017"
+            "url": "https://dl.pstmn.io/download/10.12.13/Postman-win64-10.12.13-Setup.exe#/dl.7z",
+            "hash": "sha1:3638f170bf48978db89755b8a184b1d4399c388d"
         }
     },
-    "extract_dir": "lib\\net45",
-    "bin": "Postman.exe",
+    "installer": {
+        "script": [
+            "Expand-7zipArchive \"$dir\\Postman-$version-full.nupkg\" \"$dir\\app\" -ExtractDir 'lib\\net45' -Removal",
+            "'background.gif', 'RELEASES', 'setupIcon.ico' | ForEach-Object { Remove-Item \"$dir\\$_\" }"
+        ]
+    },
     "shortcuts": [
         [
-            "Postman.exe",
+            "app/Postman.exe",
             "Postman"
         ]
     ],
@@ -31,17 +31,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dl.pstmn.io/download/$version/Postman-win64-$version-full.nupkg#/dl.7z",
+                "url": "https://dl.pstmn.io/download/$version/Postman-win64-$version-Setup.exe#/dl.7z",
                 "hash": {
-                    "url": "https://dl.pstmn.io/RELEASES?platform=win64",
-                    "jsonpath": "$.releases[*].files[?(@.name=='$basename')].hash"
-                }
-            },
-            "32bit": {
-                "url": "https://dl.pstmn.io/download/$version/Postman-win32-$version-full.nupkg#/dl.7z",
-                "hash": {
-                    "url": "https://dl.pstmn.io/RELEASES?platform=win32",
-                    "jsonpath": "$.releases[*].files[?(@.name=='$basename')].hash"
+                    "url": "https://dl.pstmn.io/RELEASES?platform=win64&from=$version",
+                    "regex": "(?sm)$basename.*?$sha1"
                 }
             }
         }

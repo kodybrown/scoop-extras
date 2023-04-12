@@ -1,5 +1,5 @@
 {
-    "version": "3.7.6",
+    "version": "3.9.1",
     "description": "Fast and friendly network scanner.",
     "homepage": "http://angryip.org/",
     "license": "GPL-2.0-or-later",
@@ -12,12 +12,13 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan-win64-3.7.6.exe#/ipscan.exe",
-            "hash": "257ba9e0bb8890194c9e8fc0c606ca928ee75ac9ac0adfc4d53b4489038a5bb5"
+            "url": "https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan-win64-3.9.1.exe#/ipscan.exe",
+            "hash": "ae50c71517182c9773bb138745f10a643b1215078ede439b2b3adb486a9cfb14"
         },
         "32bit": {
-            "url": "https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan-win32-3.7.6.exe#/ipscan.exe",
-            "hash": "7e7f92d6ff919fe8cbe63f2daa348d122339d1a0aac0883afcf799facd214810"
+            "url": "https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan-3.9.1-setup.exe#/dl.7z",
+            "hash": "892405573aa34dfc49b37e4c35b655543e88ec1c5e8ffb27ab8d1bbf90fc6ae0",
+            "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\uninstall.exe\" -Force -Recurse"
         }
     },
     "bin": "ipscan.exe",
@@ -36,7 +37,7 @@
                 "url": "https://github.com/angryip/ipscan/releases/download/$version/ipscan-win64-$version.exe#/ipscan.exe"
             },
             "32bit": {
-                "url": "https://github.com/angryip/ipscan/releases/download/$version/ipscan-win32-$version.exe#/ipscan.exe"
+                "url": "https://github.com/angryip/ipscan/releases/download/$version/ipscan-$version-setup.exe#/dl.7z"
             }
         }
     }

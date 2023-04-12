@@ -1,11 +1,11 @@
 {
-    "version": "3.10.19",
+    "version": "3.11.1",
     "description": "Simple open source podcast client written in Python using GTK+.",
     "homepage": "https://gpodder.org/",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/gpodder/gpodder/releases/download/3.10.19/windows-gpodder-3.10.19-portable.exe#/dl.7z",
-    "hash": "c701270f294e1da62eaee7fdbf5b00bc1f81fe4a0db5e1b2eeccdd7337ffc178",
-    "extract_dir": "gpodder-3.10.19-portable",
+    "url": "https://github.com/gpodder/gpodder/releases/download/3.11.1/windows-gpodder-3.11.1-portable.exe#/dl.7z",
+    "hash": "bf9897d15d89ef013f17c0f4c6871879ae2019f70004b1959481090897ae5939",
+    "extract_dir": "gpodder-3.11.1-portable",
     "bin": [
         "data\\bin\\gpo.exe",
         "data\\bin\\gpodder.exe"

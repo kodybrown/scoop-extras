@@ -1,19 +1,18 @@
 {
-    "version": "7.02-4430",
+    "version": "7.42-5030",
     "description": "Comprehensive Hardware Analysis, Monitoring and Reporting for Windows and DOS",
     "homepage": "https://www.hwinfo.com",
     "license": "Freeware",
-    "url": "https://www.hwinfo.com/files/hwi_702.zip",
-    "hash": "2e7a807f80ecf2a7e8ea9bf4e6cfc5e3afc6517c5a3ee48dc03c7f49a669d039",
+    "url": "https://www.fosshub.com/HWiNFO.html/hwi_742.zip",
+    "hash": "7d9f0897bc80909d132c85c2cb02d3f6c232613d367dfca97c405c350fb8806a",
     "pre_install": [
-        "'64' | ForEach-Object {",
-        "    if (-not (Test-Path \"$persist_dir\\HWiNFO$_.INI\")) { Set-Content \"$dir\\HWiNFO$_.INI\" '[Settings]', 'AutoUpdate=0' -Encoding Ascii}",
+        "foreach ($conf in 'HWiNFO64.INI', 'HWiNFO32.INI') {",
+        "    if (!(Test-Path \"$persist_dir\\$conf\")) { Set-Content \"$dir\\$conf\" '[Settings]', 'AutoUpdate=0' -Encoding ASCII }",
         "}"
     ],
     "architecture": {
         "64bit": {
             "bin": [
-                "HWiNFO64.exe",
                 [
                     "HWiNFO64.exe",
                     "HWiNFO"
@@ -22,13 +21,12 @@
             "shortcuts": [
                 [
                     "HWiNFO64.exe",
-                    "HWiNFO64"
+                    "HWiNFO"
                 ]
             ]
         },
         "32bit": {
             "bin": [
-                "HWiNFO32.exe",
                 [
                     "HWiNFO32.exe",
                     "HWiNFO"
@@ -37,7 +35,7 @@
             "shortcuts": [
                 [
                     "HWiNFO32.exe",
-                    "HWiNFO32"
+                    "HWiNFO"
                 ]
             ]
         }
@@ -51,6 +49,6 @@
         "regex": "([\\d-.]+)"
     },
     "autoupdate": {
-        "url": "https://www.hwinfo.com/files/hwi_$majorVersion$minorVersion.zip"
+        "url": "https://www.fosshub.com/HWiNFO.html/hwi_$majorVersion$minorVersion.zip"
     }
 }

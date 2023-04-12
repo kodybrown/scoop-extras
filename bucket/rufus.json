@@ -1,10 +1,10 @@
 {
-    "version": "3.14",
+    "version": "3.22",
     "description": "A utility that helps format and create bootable USB flash drives.",
     "homepage": "https://rufus.ie/",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/pbatard/rufus/releases/download/v3.14/rufus-3.14p.exe#/rufus.exe",
-    "hash": "c0ccf4f480545b50169cc1f5bf92b357ce588520cb8534128200ca48fc6ae588",
+    "url": "https://github.com/pbatard/rufus/releases/download/v3.22/rufus-3.22p.exe#/rufus.exe",
+    "hash": "ac2a1743bbfc19268c36280b50a003366d41854863d4808099cd87f77fa5f433",
     "pre_install": "if (!(Test-Path \"$persist_dir\\rufus.ini\")) { New-Item \"$dir\\rufus.ini\" | Out-Null }",
     "bin": "rufus.exe",
     "shortcuts": [

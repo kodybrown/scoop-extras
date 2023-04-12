@@ -1,5 +1,5 @@
 {
-    "version": "11.0.5",
+    "version": "14.0",
     "description": "A universal database tool for developers, DBAs and analysts.",
     "homepage": "https://www.dbvis.com/",
     "license": {
@@ -7,40 +7,43 @@
         "url": "https://www.dbvis.com/eula/"
     },
     "suggest": {
-        "JDK": [
-            "java/oraclejdk",
-            "java/openjdk"
-        ]
+        "JDK": "java/openjdk",
+        "JRE": "java/temurin-jre"
     },
     "architecture": {
         "64bit": {
-            "url": "https://www.dbvis.com/product_download/dbvis-11.0.5/media/dbvis_windows-x64_11_0_5.zip",
-            "hash": "fe7bb059edbafe5f4442a4508a6707ba64d6c8d3fce6646346b662918fc13e00"
-        },
-        "32bit": {
-            "url": "https://www.dbvis.com/product_download/dbvis-11.0.5/media/dbvis_windows-x32_11_0_5.zip",
-            "hash": "364d72bdb668be59a4bb21652560c2dee508e797f8c0e300aeb34f5f0c7936eb"
+            "url": "https://www.dbvis.com/product_download/dbvis-14.0/media/dbvis_windows-x64_14_0.zip",
+            "hash": "cf5348c337a60ac40e086730cbaad791632b626640d149fac92e543ccfdd0f88"
         }
     },
     "extract_dir": "DbVisualizer",
     "bin": [
-        "dbvis.exe",
-        "dbviscmd.bat"
+        "dbviscmd.bat",
+        [
+            "dbviscmd.bat",
+            "dbvis"
+        ]
     ],
     "shortcuts": [
         [
-            "dbvis.exe",
-            "DbVisualizer"
+            "dbvisgui.bat",
+            "DbVisualizer",
+            "",
+            "dbvis.exe"
         ]
     ],
-    "checkver": "DbVisualizer ([\\d.]+)",
+    "checkver": {
+        "url": "https://www.dbvis.com/download/",
+        "regex": "DbVisualizer\\s+([\\d.]+)"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.dbvis.com/product_download/dbvis-$version/media/dbvis_windows-x64_$underscoreVersion.zip"
-            },
-            "32bit": {
-                "url": "https://www.dbvis.com/product_download/dbvis-$version/media/dbvis_windows-x32_$underscoreVersion.zip"
+                "url": "https://www.dbvis.com/product_download/dbvis-$version/media/dbvis_windows-x64_$underscoreVersion.zip",
+                "hash": {
+                    "url": "https://www.dbvis.com/download/",
+                    "regex": ".zip&nbsp;\\[$sha256\\]"
+                }
             }
         }
     }

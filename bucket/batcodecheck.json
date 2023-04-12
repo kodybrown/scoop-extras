@@ -1,5 +1,5 @@
 {
-    "version": "0.36",
+    "version": "0.41",
     "description": "Batch file (.bat) linter",
     "homepage": "https://www.robvanderwoude.com",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://www.robvanderwoude.com"
     },
     "url": "https://www.robvanderwoude.com/files/batcodecheck.zip",
-    "hash": "md5:741da5a5de5d45510dde3727d68c7750",
+    "hash": "md5:8cf3fca94131db95ea06c3b7b40dea11",
     "bin": "BatCodeCheck.exe",
     "checkver": {
         "url": "https://www.robvanderwoude.com/helptext.php?src=batcodecheck_cs_help",

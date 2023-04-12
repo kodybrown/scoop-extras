@@ -1,10 +1,10 @@
 {
-    "version": "4.2.4",
+    "version": "4.2.14",
     "description": "A Bitcoin Cash SPV Wallet",
     "homepage": "https://electroncash.org",
     "license": "MIT",
-    "url": "https://github.com/Electron-Cash/Electron-Cash/releases/download/4.2.4/Electron-Cash-4.2.4-portable.exe#/Electron-Cash.exe",
-    "hash": "5944d70ce4a05b1bdcb30fe5882f9dccc20c62b126b357858409a4debe20572b",
+    "url": "https://github.com/Electron-Cash/Electron-Cash/releases/download/4.2.14/Electron-Cash-4.2.14-portable.exe#/Electron-Cash.exe",
+    "hash": "27734048512c4b909674a8139567b054291529c5754e087ade2d0117ab87a6eb",
     "shortcuts": [
         [
             "Electron-Cash.exe",

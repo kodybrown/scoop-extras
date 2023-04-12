@@ -1,39 +1,40 @@
 {
-    "version": "7.6",
+    "version": "8.2",
     "description": "A multi-processor disassembler and debugger that offers so many features it is hard to describe them all",
-    "homepage": "https://www.hex-rays.com/products/ida/index.shtml",
-    "license": {
-        "identifier": "Freeware",
-        "url": "https://www.hex-rays.com/products/ida/licenses.shtml"
-    },
+    "homepage": "https://hex-rays.com/ida-free/",
+    "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://out7.hex-rays.com/files/idafree76_windows.exe",
-            "hash": "sha1:1923da63b033063d7cbcecdb05d62de42e929cb6",
-            "bin": "ida64.exe",
-            "shortcuts": [
-                [
-                    "ida64.exe",
-                    "IDA Freeware"
-                ]
-            ]
+            "url": "https://out7.hex-rays.com/files/idafree82_windows.exe",
+            "hash": "sha1:4c9e340d799506543846b5efac2790048242602f"
         }
     },
-    "pre_install": "if (!(is_admin)) { error 'Administrator privileges are required'; break }",
+    "pre_install": "if (!(is_admin)) { throw 'Administrator privileges are required' }",
     "installer": {
         "args": [
-            "--mode unattended",
-            "--unattendedmodeui minimal",
-            "--installpassword freeware",
-            "--prefix \"$dir\""
+            "--mode",
+            "unattended",
+            "--prefix",
+            "$dir"
         ]
     },
+    "bin": "ida64.exe",
+    "shortcuts": [
+        [
+            "ida64.exe",
+            "IDA Freeware"
+        ]
+    ],
+    "pre_uninstall": "if (!(is_admin)) { throw 'Administrator privileges are required' }",
     "uninstaller": {
         "file": "uninstall.exe",
-        "args": "--mode unattended"
+        "args": [
+            "--mode",
+            "unattended"
+        ]
     },
     "checkver": {
-        "url": "https://www.hex-rays.com/products/ida/support/download_freeware.shtml",
+        "url": "https://hex-rays.com/ida-free/#download",
         "regex": "IDA\\sv([\\d.]+)\\s+"
     },
     "autoupdate": {
@@ -41,7 +42,7 @@
             "64bit": {
                 "url": "https://out7.hex-rays.com/files/idafree$majorVersion$minorVersion_windows.exe",
                 "hash": {
-                    "url": "https://www.hex-rays.com/products/ida/support/download_freeware.shtml",
+                    "url": "https://hex-rays.com/ida-free/#download",
                     "regex": "$sha1\\s+$basename"
                 }
             }

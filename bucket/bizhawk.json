@@ -3,7 +3,7 @@
         "The requirements are listed in https://github.com/TASVideos/BizHawk-Prereqs/blob/master/README",
         "The list of firmware-specific directories to persist comes from the base directories listed in BizHawk's /src/BizHawk.Client.Common/config/PathEntryCollection.cs"
     ],
-    "version": "2.6.1",
+    "version": "2.9",
     "description": "Multi system emulator",
     "homepage": "http://tasvideos.org/BizHawk.html",
     "license": "MIT",
@@ -11,13 +11,13 @@
     "suggest": {
         "Microsoft Visual C++ Redistributables": [
             "extras/vcredist2010",
-            "extras/vcredist2015"
+            "extras/vcredist2022"
         ]
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/TASVideos/BizHawk/releases/download/2.6.1/BizHawk-2.6.1-win-x64.zip",
-            "hash": "b2c15a03ce37f6807797a7d80a073c7fcf9d2365cb92d6828495e62e113f6d7e"
+            "url": "https://github.com/TASVideos/BizHawk/releases/download/2.9/BizHawk-2.9-win-x64.zip",
+            "hash": "9c456b7ccadc8b8859879343444d7284cd42c7268f9d7db5100ce08bd3ab3c54"
         }
     },
     "pre_install": "if (!(Test-Path \"$persist_dir\\config.ini\")) { New-Item \"$dir\\config.ini\" | Out-Null }",
@@ -63,8 +63,10 @@
         "Intellivision",
         "Libretro",
         "Lynx",
+        "Melon",
         "MSX",
         "N64",
+        "NDS",
         "NES",
         "NGP",
         "O2",
@@ -82,7 +84,8 @@
         "ZXSpectrum"
     ],
     "checkver": {
-        "github": "https://github.com/TASVideos/BizHawk"
+        "url": "http://tasvideos.org/Bizhawk/ReleaseHistory",
+        "regex": ">\\s*BizHawk\\s*([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {

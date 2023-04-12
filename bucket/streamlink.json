@@ -1,36 +1,61 @@
 {
-    "version": "2.1.1",
+    "version": "5.3.1-1",
     "description": "A command-line utility that pipes video streams from various services into a video player.",
     "homepage": "https://streamlink.github.io/",
     "license": "BSD-2-Clause",
-    "notes": "Streamlink settings can be changed in '%APPDATA%\\streamlink\\streamlinkrc'",
+    "notes": "You will find your config file here: '$dir\\config'. To customise it, read the docs here: https://streamlink.github.io/cli/config.html#syntax",
     "suggest": {
         "FFmpeg": [
             "ffmpeg",
             "ffmpeg-nightly"
-        ]
+        ],
+        "VLC Player": "extras/vlc"
     },
-    "url": "https://github.com/streamlink/streamlink/releases/download/2.1.1/streamlink-2.1.1.exe#/dl.7z",
-    "hash": "58671bad6add0ad3aa7accbab465acf66ee8dbafe6369264599af58e41f8305d",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/streamlink/windows-builds/releases/download/5.3.1-1/streamlink-5.3.1-1-py311-x86_64.zip",
+            "hash": "4d51a46b7fb9bdf0b68ebfb27e6f70770a00f1538a7a54c20920c6ac452c6d6c",
+            "extract_dir": "streamlink-5.3.1-1-py311-x86_64"
+        },
+        "32bit": {
+            "url": "https://github.com/streamlink/windows-builds/releases/download/5.3.1-1/streamlink-5.3.1-1-py311-x86.zip",
+            "hash": "ed30bf929ccad9c96a859eaf2bae1e8402027012a04ed7b386b45de6b6caf901",
+            "extract_dir": "streamlink-5.3.1-1-py311-x86"
+        }
+    },
     "pre_install": [
-        "if (!(Test-Path \"$env:APPDATA\\streamlink\\streamlinkrc\")) {",
-        "    info 'Copying default ''streamlinkrc'' to ''%APPDATA%\\streamlink\\streamlinkrc'''",
-        "    ensure \"$env:APPDATA\\streamlink\" | Out-Null",
-        "    Copy-Item \"$dir\\`$APPDATA\\streamlink\\streamlinkrc\" \"$env:APPDATA\\streamlink\\streamlinkrc\"",
-        "}",
-        "Remove-Item \"$dir\\`$*\", \"$dir\\ffmpeg\", \"$dir\\uninstall.exe\" -Recurse"
+        "if (!(Test-Path \"$persist_dir\\config\")) {",
+        "    if (Test-Path \"$env:APPDATA\\streamlink\\config\") {",
+        "        info 'Copying existing ''config'' from ''%APPDATA%\\streamlink\\config'''",
+        "        Copy-Item \"$env:APPDATA\\streamlink\\config\" \"$dir\\config\"",
+        "    } else {",
+        "        New-Item \"$dir\\config\" | Out-Null",
+        "    }",
+        "}"
     ],
-    "uninstaller": {
-        "script": "if ($purge) { Remove-Item \"$env:APPDATA\\streamlink\" -Recurse}"
-    },
     "bin": [
-        "bin\\streamlink.exe",
+        [
+            "bin\\streamlink.exe",
+            "streamlink",
+            "--ffmpeg-ffmpeg \"$dir\\ffmpeg\\ffmpeg.exe\" --config \"$dir\\config\""
+        ],
         "bin\\streamlinkw.exe"
     ],
+    "persist": "config",
     "checkver": {
-        "github": "https://github.com/streamlink/streamlink"
+        "url": "https://github.com/streamlink/windows-builds/releases/",
+        "regex": "tree/([\\d.\\-]+)"
     },
     "autoupdate": {
-        "url": "https://github.com/streamlink/streamlink/releases/download/$version/streamlink-$version.exe#/dl.7z"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/streamlink/windows-builds/releases/download/$version/streamlink-$version-py311-x86_64.zip",
+                "extract_dir": "streamlink-$version-py311-x86_64"
+            },
+            "32bit": {
+                "url": "https://github.com/streamlink/windows-builds/releases/download/$version/streamlink-$version-py311-x86.zip",
+                "extract_dir": "streamlink-$version-py311-x86"
+            }
+        }
     }
 }

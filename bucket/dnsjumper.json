@@ -7,7 +7,7 @@
         "url": "https://www.sordum.org/eula/"
     },
     "url": "https://www.sordum.org/files/dns-jumper/DnsJumper.zip",
-    "hash": "fb942d84ffc2c1dd02f31028862ec4487e9c19d57e93420dac590b76e55e8839",
+    "hash": "a21764cfa199b19ac3009c2ae367a18a9ff79d44dd34e84007e1d9a4d6df1df5",
     "extract_dir": "DnsJumper",
     "bin": "dnsjumper.exe",
     "shortcuts": [

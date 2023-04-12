@@ -1,12 +1,12 @@
 {
-    "version": "1.4.1",
+    "version": "1.15.8",
     "description": "A Beautiful Gemini Client",
     "homepage": "https://gmi.skyjake.fi/lagrange",
     "license": "BSD-2-Clause",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/skyjake/lagrange/releases/download/v1.4.1/lagrange_v1.4.1_windows-x64_portable.zip",
-            "hash": "f7eaacc784853df3eec79b73603939ae0c77a6e47ef1006f2a7b043ba8a0ec10"
+            "url": "https://github.com/skyjake/lagrange/releases/download/v1.15.8/lagrange_v1.15.8_windows-x64_portable.zip",
+            "hash": "5b0738b41909b40ce1f303b35e2bc3ee5726de9f7ea1d5d8c4bd6589eb5ebf09"
         }
     },
     "bin": "lagrange.exe",

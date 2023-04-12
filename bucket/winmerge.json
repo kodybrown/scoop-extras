@@ -1,5 +1,5 @@
 {
-    "version": "2.16.12",
+    "version": "2.16.28",
     "description": "Differencing and merging tool, that compares both folders and files, presenting differences in a visual text format that is easy to understand and handle.",
     "homepage": "https://winmerge.org",
     "license": "GPL-2.0-only",
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/winmerge/stable/2.16.12/winmerge-2.16.12-x64-exe.zip",
-            "hash": "sha1:a739a05442b5fa6454749274ff8a808ae5d0e000"
+            "url": "https://github.com/WinMerge/winmerge/releases/download/v2.16.28/winmerge-2.16.28-x64-exe.zip",
+            "hash": "e1c6dca744b2022dc0f3a105164d29f151373fa067411e579e6e005ba7a98b8b"
         },
         "32bit": {
-            "url": "https://downloads.sourceforge.net/project/winmerge/stable/2.16.12/winmerge-2.16.12-exe.zip",
-            "hash": "sha1:e782c9a572e3294cb56948424d48a77834aaae32"
+            "url": "https://github.com/WinMerge/winmerge/releases/download/v2.16.28/winmerge-2.16.28-exe.zip",
+            "hash": "5df7528f94432360b5c7a05f5a0a605344c18acf94f22d7c8d5506f07220c133"
         }
     },
     "extract_dir": "WinMerge",
@@ -28,11 +28,15 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.sourceforge.net/project/winmerge/stable/$version/winmerge-$version-x64-exe.zip"
+                "url": "https://github.com/WinMerge/winmerge/releases/download/v$version/winmerge-$version-x64-exe.zip"
             },
             "32bit": {
-                "url": "https://downloads.sourceforge.net/project/winmerge/stable/$version/winmerge-$version-exe.zip"
+                "url": "https://github.com/WinMerge/winmerge/releases/download/v$version/winmerge-$version-exe.zip"
             }
+        },
+        "hash": {
+            "url": "https://winmerge.org/downloads",
+            "regex": "(?sm)<dt>$basename</dt>.*?<dd><code>$sha256</code></dd>"
         }
     }
 }

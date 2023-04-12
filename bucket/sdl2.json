@@ -1,15 +1,15 @@
 {
-    "version": "2.0.10",
-    "description": "Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.",
+    "version": "2.26.5",
+    "description": "SDL (Simple DirectMedia Layer) is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.",
     "homepage": "https://www.libsdl.org",
     "license": "Zlib",
     "url": [
-        "https://www.libsdl.org/release/SDL2-devel-2.0.10-VC.zip",
-        "https://www.libsdl.org/release/SDL2-2.0.10.zip"
+        "https://github.com/libsdl-org/SDL/releases/download/release-2.26.5/SDL2-devel-2.26.5-VC.zip",
+        "https://github.com/libsdl-org/SDL/releases/download/release-2.26.5/SDL2-2.26.5.zip"
     ],
     "hash": [
-        "f1930cf5033725b0e7829c7368f70f65a993bc946ca1197c36888ccecbf07891",
-        "658b0435f57d496e967c1996badbd83bac120689a693f57c4007698d0fe24543"
+        "446cf6277ff0dd4211e6dc19c1b9015210a72758f53f5034c7e4d6b60e540ecf",
+        "d88362fc3ee350a037e31381db00df764a294244bac8e427b8c67c6ca4d7e6fd"
     ],
     "installer": {
         "script": [
@@ -27,7 +27,7 @@
             "rm \"$dir\\include\\*.h.*\"",
             "$pcin = \"$srcdir\\sdl2.pc.in\"",
             "$pcout = \"$dir\\lib\\pkgconfig\\sdl2.pc\"",
-            "sc $pcout ((gc $pcin) `",
+            "Set-Content $pcout ((gc $pcin) `",
             "    -replace \"@prefix@\",\"\" `",
             "    -replace \"@exec_prefix@\",\"`${prefix}\" `",
             "    -replace \"@libdir@\",\"`${exec_prefix}/lib\" `",
@@ -36,18 +36,19 @@
             "    -replace \"@SDL_RLD_FLAGS@\",\"\" `",
             "    -replace \"@SDL_LIBS@\",\"-lSDL2\" `",
             "    -replace \"@SDL_STATIC_LIBS@\",\"-lSDL2\" `",
-            "    -replace \"@SDL_CFLAGS@\",\"-lpthread -lasound\" `",
+            "    -replace \"@SDL_CFLAGS@\",\"\" `",
+            "    -replace \"@PKGCONFIG_LIBS_PRIV@\",\"\" `",
             ")",
             "",
             "rm -r \"$srcdir\"",
             "",
-            "$pcdir = \"$(current_dir $dir)\\lib\\pkgconfig\"",
-            "$cmdir = \"$(current_dir $dir)\"",
+            "$cmdir = if (get_config NO_JUNCTIONS) { $dir } else { \"$(appdir $app $global)\\current\" }",
+            "$pcdir = \"$cmdir\\lib\\pkgconfig\"",
             "# future sessions",
             "$null, $currpath = strip_path (env 'PKG_CONFIG_PATH' $global) $pcdir",
             "env 'PKG_CONFIG_PATH' $global \"$pcdir;$currpath\"",
-            "$null, $currpath = strip_path (env 'CMAKE_PREFIX_PATH' $global) $cmddir",
-            "env 'CMAKE_PREFIX_PATH' $global \"$cmddir;$currpath\"",
+            "$null, $currpath = strip_path (env 'CMAKE_PREFIX_PATH' $global) $cmdir",
+            "env 'CMAKE_PREFIX_PATH' $global \"$cmdir;$currpath\"",
             "# this session",
             "$null, $env:PKG_CONFIG_PATH = strip_path $env:PKG_CONFIG_PATH $pcdir",
             "$env:PKG_CONFIG_PATH = \"$pcdir;$env:PKG_CONFIG_PATH\"",
@@ -57,8 +58,8 @@
     },
     "uninstaller": {
         "script": [
-            "$pcdir = \"$(current_dir $dir)\\lib\\pkgconfig\"",
-            "$cmdir = \"$(current_dir $dir)\"",
+            "$cmdir = if (get_config NO_JUNCTIONS) { $dir } else { \"$(appdir $app $global)\\current\" }",
+            "$pcdir = \"$cmdir\\lib\\pkgconfig\"",
             "# future sessions",
             "$was_in_path, $newpath = strip_path (env 'PKG_CONFIG_PATH' $global) $pcdir",
             "if($was_in_path) {",
@@ -78,7 +79,13 @@
         ]
     },
     "checkver": {
-        "url": "https://www.libsdl.org/download-2.0.php",
-        "regex": "SDL version ([\\d.]+)"
+        "github": "https://github.com/libsdl-org/SDL",
+        "regex": "tag/release-([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": [
+            "https://github.com/libsdl-org/SDL/releases/download/release-$version/SDL2-devel-$version-VC.zip",
+            "https://github.com/libsdl-org/SDL/releases/download/release-$version/SDL2-$version.zip"
+        ]
     }
 }

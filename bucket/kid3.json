@@ -1,18 +1,13 @@
 {
-    "version": "3.8.6",
+    "version": "3.9.3-1",
     "description": "Efficient ID3v1 and ID3v2 tag editor",
     "homepage": "https://kid3.kde.org",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/kid3/kid3/3.8.6/kid3-3.8.6-win32-x64.zip",
-            "hash": "sha1:efeba66fad4363cc08740b4209f92278c71b124f",
-            "extract_dir": "kid3-3.8.6-win32-x64"
-        },
-        "32bit": {
-            "url": "https://downloads.sourceforge.net/project/kid3/kid3/3.8.6/kid3-3.8.6-win32.zip",
-            "hash": "sha1:7d9cdca2e49b0b6cbd57bbc4f7c9caf0803bf847",
-            "extract_dir": "kid3-3.8.6-win32"
+            "url": "https://downloads.sourceforge.net/project/kid3/kid3/3.9.3/kid3-3.9.3-1-win32-x64.zip",
+            "hash": "sha1:a28468df977682a4263e0245fe15d963923291fe",
+            "extract_dir": "kid3-3.9.3-1-win32-x64"
         }
     },
     "bin": [
@@ -28,16 +23,12 @@
             "Kid3"
         ]
     ],
-    "checkver": "kid3-([\\d.]+)-win32-x64\\.zip",
+    "checkver": "kid3-([\\d.-]+)-win32-x64\\.zip",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.sourceforge.net/project/kid3/kid3/$version/kid3-$version-win32-x64.zip",
+                "url": "https://downloads.sourceforge.net/project/kid3/kid3/$matchHead/kid3-$version-win32-x64.zip",
                 "extract_dir": "kid3-$version-win32-x64"
-            },
-            "32bit": {
-                "url": "https://downloads.sourceforge.net/project/kid3/kid3/$version/kid3-$version-win32.zip",
-                "extract_dir": "kid3-$version-win32"
             }
         }
     }

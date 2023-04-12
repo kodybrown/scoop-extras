@@ -1,5 +1,5 @@
 {
-    "version": "4.2.0",
+    "version": "4.4.1",
     "description": "An advanced file and directory compare tool.",
     "homepage": "https://www.syntevo.com/smartsynchronize/",
     "license": {
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://www.syntevo.com/downloads/smartsynchronize/smartsynchronize-portable-4_2_0.7z",
-            "hash": "sha1:d6d10a8314b63a3736d861e3d2d13140056eb300"
+            "url": "https://www.syntevo.com/downloads/smartsynchronize/smartsynchronize-portable-4_4_1.7z",
+            "hash": "sha1:72bc8f0943b1f916f53879e2eaf441ab09bb6336"
         }
     },
     "extract_dir": "SmartSynchronize",

@@ -1,12 +1,12 @@
 {
-    "version": "2.10.0",
+    "version": "2.10.3",
     "description": "A free runtime environment for Java applications that can be implemented as plugins.",
     "homepage": "https://www.willuhn.de/products/jameica/",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://www.willuhn.de/products/jameica/releases/current/jameica/jameica-win64-2.10.0.zip",
-            "hash": "sha1:33c3782c27dfd3f5e8e7c6b9d5977f04cd33afa2",
+            "url": "https://www.willuhn.de/products/jameica/releases/current/jameica/jameica-win64-2.10.3.zip",
+            "hash": "sha1:2034ba06b04231d445e0f6b49e17ed73fe555db3",
             "bin": [
                 "jameica-win64.exe",
                 [
@@ -22,8 +22,8 @@
             ]
         },
         "32bit": {
-            "url": "https://www.willuhn.de/products/jameica/releases/current/jameica/jameica-win32-2.10.0.zip",
-            "hash": "sha1:d7972ecf7988735e35aa58e09f36f6ce33e941b8",
+            "url": "https://www.willuhn.de/products/jameica/releases/current/jameica/jameica-win32-2.10.3.zip",
+            "hash": "sha1:94a14f9945670d285a701b1ad63d05f167790bf9",
             "bin": [
                 "jameica-win32.exe",
                 [
@@ -43,7 +43,7 @@
     "persist": "plugins",
     "checkver": {
         "url": "https://www.willuhn.de/products/jameica/download.php",
-        "regex": "Jameica\\s+([\\d.]+)\\s+-\\s+Aktuelle Version"
+        "regex": "jameica-win64-([\\d.]+).zip"
     },
     "autoupdate": {
         "architecture": {

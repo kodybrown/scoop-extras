@@ -1,5 +1,5 @@
 {
-    "version": "2.42",
+    "version": "3.11",
     "description": "Eject, open, or close any drive: USB, DVD/CD, SSD, etc.",
     "homepage": "http://www.softwareok.com/?seite=Microsoft/OpenCloseDriveEject",
     "license": {
@@ -9,23 +9,23 @@
     "architecture": {
         "64bit": {
             "url": "https://www.softwareok.com/Download/OpenCloseDriveEject_x64.zip",
-            "hash": "b4b940b8d89a7e660794f6a8b8acfa564ae9fbdd4e16a01d022e7b02b9c4a19b",
+            "hash": "dc6fe1c7f2ee326faf272929345576137395446aae38415d09577835ef1da1d8",
             "bin": [
                 [
-                    "OpenCloseDriveEject_x64_p.exe",
+                    "OpenCloseDriveEject_x64.exe",
                     "OpenCloseDriveEject"
                 ]
             ],
             "shortcuts": [
                 [
-                    "OpenCloseDriveEject_x64_p.exe",
+                    "OpenCloseDriveEject_x64.exe",
                     "OpenCloseDriveEject"
                 ]
             ]
         },
         "32bit": {
             "url": "https://www.softwareok.com/Download/OpenCloseDriveEject.zip",
-            "hash": "c3ed6cd30b7ba74f193397925a3356942e4f0644b1c39f01670198d4ddf0d676",
+            "hash": "49561893351ca40de2567bc3b5a84361b978487d4830d0a9b1174c4d8e89a5c8",
             "bin": "OpenCloseDriveEject.exe",
             "shortcuts": [
                 [

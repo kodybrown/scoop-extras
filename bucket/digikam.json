@@ -1,12 +1,12 @@
 {
-    "version": "7.2.0",
+    "version": "7.10.0",
     "description": "Professional Photo Management",
     "homepage": "https://www.digikam.org",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://download.kde.org/stable/digikam/7.2.0/digiKam-7.2.0-Win64.exe#/dl.7z",
-            "hash": "76d83bc50c30da90c86b3efa1fec4eed77a055f1b1cfaca2271db74d8d511ffb"
+            "url": "https://download.kde.org/stable/digikam/7.10.0/digiKam-7.10.0-Win64.exe#/dl.7z",
+            "hash": "23f70a6955e4f11efca4260269a8689fb49e17b342ee658dcdbe01d09860a87d"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse",

@@ -1,16 +1,16 @@
 {
-    "version": "1.133.0.8",
+    "version": "1.190.1.0",
     "description": "Text editor",
     "homepage": "http://uvviewsoft.com/cudatext/",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x64-1.133.0.8.zip",
-            "hash": "2555c3ccefcb6cc5b71155d55c00c370df93fcd6f31c75b386857b1257158371"
+            "url": "https://sourceforge.net/projects/cudatext/files/release/1.190.1.0/cudatext-windows-amd64-1.190.1.0.zip",
+            "hash": "sha1:2175e650c1146b9a37f9f864bff884e6390eef01"
         },
         "32bit": {
-            "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x32-1.133.0.8.zip",
-            "hash": "6ed5f66aad05ce9f38e70be30c1032905f989f133a5889267a58f7d859681a95"
+            "url": "https://sourceforge.net/projects/cudatext/files/release/1.190.1.0/cudatext-windows-i386-1.190.1.0.zip",
+            "hash": "sha1:7b72729600373761a0deab771de55394b0fa61a8"
         }
     },
     "bin": "cudatext.exe",
@@ -22,16 +22,15 @@
     ],
     "persist": "settings",
     "checkver": {
-        "url": "https://www.fosshub.com/CudaText.html",
-        "regex": "cudatext-win-x64-([\\d.]+)\\.zip"
+        "sourceforge": "cudatext/release"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x64-$version.zip"
+                "url": "https://sourceforge.net/projects/cudatext/files/release/$version/cudatext-windows-amd64-$version.zip"
             },
             "32bit": {
-                "url": "https://www.fosshub.com/CudaText.html/cudatext-win-x32-$version.zip"
+                "url": "https://sourceforge.net/projects/cudatext/files/release/$version/cudatext-windows-i386-$version.zip"
             }
         }
     }

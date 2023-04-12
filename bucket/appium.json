@@ -1,10 +1,10 @@
 {
-    "version": "1.20.2",
+    "version": "1.22.3",
     "description": "Test automation framework for use with native, hybrid and mobile web apps.",
     "homepage": "http://appium.io/",
     "license": "Apache-2.0",
-    "url": "https://github.com/appium/appium-desktop/releases/download/v1.20.2/Appium-windows-1.20.2.exe#/dl.7z",
-    "hash": "sha512:5963da943e9720ef81fad360fff84ba9d903800270c7d6bdcd5b03acbf846250e9cf950ea2616aabb93d026875e7f9edf8e6d0af83b3e04f3510787646263cb3",
+    "url": "https://github.com/appium/appium-desktop/releases/download/v1.22.3/Appium.Server.GUI-windows-1.22.3.exe#/dl.7z",
+    "hash": "541eccf5221bae643093936e169dc9af9613d026d8a7781fd7a88203d0401315",
     "architecture": {
         "64bit": {
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
@@ -16,18 +16,14 @@
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Force -Recurse",
     "shortcuts": [
         [
-            "Appium.exe",
-            "Appium"
+            "Appium Server GUI.exe",
+            "Appium Server GUI"
         ]
     ],
     "checkver": {
         "github": "https://github.com/appium/appium-desktop"
     },
     "autoupdate": {
-        "url": "https://github.com/appium/appium-desktop/releases/download/v$version/Appium-windows-$version.exe#/dl.7z",
-        "hash": {
-            "url": "$baseurl/latest.yml",
-            "regex": "sha512:\\s+$base64"
-        }
+        "url": "https://github.com/appium/appium-desktop/releases/download/v$version/Appium.Server.GUI-windows-$version.exe#/dl.7z"
     }
 }

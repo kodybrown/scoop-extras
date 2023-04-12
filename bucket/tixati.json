@@ -1,5 +1,5 @@
 {
-    "version": "2.81",
+    "version": "3.17",
     "description": "BitTorrent client with advanced features",
     "homepage": "https://tixati.com",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://download1.tixati.com/download/tixati-2.81-1.win64-install.exe#/dl.7z",
-            "hash": "3b12e201dd08271a440e3bb34292dab71a85ee64fdc7b36286890927ba3b72b1"
+            "url": "https://download1.tixati.com/download/tixati-3.17-1.win64-install.exe#/dl.7z",
+            "hash": "939622fcb826c4c84e563afab16e97deace9bd0243294dff37c01c81fd2eb98b"
         },
         "32bit": {
-            "url": "https://download1.tixati.com/download/tixati-2.81-1.win32-install.exe#/dl.7z",
-            "hash": "36c8f731caf1838266e9a9c1e68d55b2fe1effb08532b043cd0c328bf9412f26"
+            "url": "https://download1.tixati.com/download/tixati-3.17-1.win32-install.exe#/dl.7z",
+            "hash": "0096d57a3e1d20efee333e562ffc0c860ea1efb1d5ac8719ac6c20d0a4ff0f87"
         }
     },
     "installer": {

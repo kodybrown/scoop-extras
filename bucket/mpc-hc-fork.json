@@ -1,14 +1,13 @@
 {
-    "version": "1.9.11",
+    "version": "2.0.0",
     "description": "An extremely light-weight, open source media player for Windows.",
     "homepage": "https://github.com/clsid2/mpc-hc",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/clsid2/mpc-hc/releases/download/1.9.11/MPC-HC.1.9.11.x64.zip",
-            "hash": "de9cfacf18c85feb89ba41c204de747ae247a4b2633490745c9be7a2a6c5dfd8",
+            "url": "https://github.com/clsid2/mpc-hc/releases/download/2.0.0/MPC-HC.2.0.0.x64.zip",
+            "hash": "2e24c05a4cf10ef37a589c02aea4d4f08daca6191fdf9da35b840ff9a4558809",
             "bin": [
-                "mpc-hc64.exe",
                 [
                     "mpc-hc64.exe",
                     "mpc-hc"
@@ -22,8 +21,8 @@
             ]
         },
         "32bit": {
-            "url": "https://github.com/clsid2/mpc-hc/releases/download/1.9.11/MPC-HC.1.9.11.x86.zip",
-            "hash": "4f5ebd67d0e1e1950ef790cd35355263912fc07adcb49c363d662a04397a4fda",
+            "url": "https://github.com/clsid2/mpc-hc/releases/download/2.0.0/MPC-HC.2.0.0.x86.zip",
+            "hash": "9e77432ad119098216dddda8aa615ba94247ebe9c666c69171c53369cd9e3a0f",
             "bin": "mpc-hc.exe",
             "shortcuts": [
                 [
@@ -40,16 +39,20 @@
     ],
     "persist": [
         "mpc-hc64.ini",
-        "mpc-hc.ini"
+        "mpc-hc.ini",
+        "default.mpcpl"
     ],
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/clsid2/mpc-hc",
+        "regex": "(?<tag>[\\d.]+)\\/MPC-HC.([\\d.]+).x64.exe"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/clsid2/mpc-hc/releases/download/$version/MPC-HC.$version.x64.zip"
+                "url": "https://github.com/clsid2/mpc-hc/releases/download/$matchTag/MPC-HC.$version.x64.zip"
             },
             "32bit": {
-                "url": "https://github.com/clsid2/mpc-hc/releases/download/$version/MPC-HC.$version.x86.zip"
+                "url": "https://github.com/clsid2/mpc-hc/releases/download/$matchTag/MPC-HC.$version.x86.zip"
             }
         }
     }

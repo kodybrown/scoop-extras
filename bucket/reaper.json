@@ -1,5 +1,5 @@
 {
-    "version": "6.28",
+    "version": "6.78",
     "description": "Digital Audio Workstation",
     "homepage": "https://www.reaper.fm",
     "license": {
@@ -9,12 +9,12 @@
     "notes": "The portable version of Reaper does not include ReWire.",
     "architecture": {
         "64bit": {
-            "url": "https://www.reaper.fm/files/6.x/reaper628_x64-install.exe#/dl.7z",
-            "hash": "64560f45cec4ceca26b30d17d7f78c72503a89333ff8537864e5341b0948eb2d"
+            "url": "https://www.reaper.fm/files/6.x/reaper678_x64-install.exe#/dl.7z",
+            "hash": "658750c396bee77106ba9d46619b66ee684dc0f6ed7b9a97839779c58d3d65fc"
         },
         "32bit": {
-            "url": "https://www.reaper.fm/files/6.x/reaper628-install.exe#/dl.7z",
-            "hash": "e610dc384032edb962a5b6ee77e4feb1868da16d241821b9f4bc1e2543efa450"
+            "url": "https://www.reaper.fm/files/6.x/reaper678-install.exe#/dl.7z",
+            "hash": "bcba2013aad99594d730f99ec9b599bb679288faad2fd5d9e5bd5304939c7769"
         }
     },
     "bin": [
@@ -33,7 +33,7 @@
     ],
     "installer": {
         "script": [
-            "Move-Item \"$dir\\`$INSTDIR`$_8_\\*\" -Destination \"$dir\"",
+            "Rename-Item \"$dir\\`$INSTDIR`$_8_\" 'InstallData'",
             "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse -Force"
         ]
     },

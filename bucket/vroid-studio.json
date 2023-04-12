@@ -1,6 +1,6 @@
 {
-    "version": "0.13.1",
-    "description": "A 3D character maker",
+    "version": "1.21.0",
+    "description": "3D character maker",
     "homepage": "https://vroid.com/en/studio",
     "license": {
         "identifier": "Proprietary",
@@ -8,24 +8,25 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://download.vroid.com/dist/VRoidStudio-v0.13.1-win.zip",
-            "hash": "4baf6afbc9550fbd956bef8c87447ca784097461fc23406e1283687bb42814a2"
+            "url": "https://download.vroid.com/dist/Kj7RP4cIj2/VRoidStudio-v1.21.0-win.exe",
+            "hash": "344a7a6986ee7566651ecc30646a0cbab7ace42ff682c55fbe9d153a22d32c36"
         }
     },
-    "extract_dir": "VRoidStudio-v0.13.1-win",
+    "innosetup": true,
+    "pre_install": "if (!(Test-Path \"$dir\\uWintab.log\")) {New-Item \"$dir\\uWintab.log\" | Out-Null}",
     "shortcuts": [
         [
             "VRoidStudio.exe",
             "VRoid Studio"
         ]
     ],
-    "checkver": "dist/VRoidStudio-v([\\d.]+)-win\\.zip",
+    "persist": "uWintab.log",
+    "checkver": "https://download.vroid.com/dist/(?<distId>[\\w]+)/VRoidStudio-v(?<version>[\\d.]+)-win\\.exe",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download.vroid.com/dist/VRoidStudio-v$version-win.zip"
+                "url": "https://download.vroid.com/dist/$matchDistid/VRoidStudio-v$version-win.exe"
             }
-        },
-        "extract_dir": "VRoidStudio-v$version-win"
+        }
     }
 }
