@@ -1,12 +1,12 @@
 {
-    "version": "2.6.12",
+    "version": "2.6.13",
     "description": "Open-source end-to-end encrypted note taking alternative to Evernote.",
     "homepage": "https://notesnook.com/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/streetwriters/notesnook/releases/download/v2.6.12/notesnook_win_x64.exe#/dl.7z",
-            "hash": "sha512:62dcfedb553092188ec1f30c6f4500017ca956aa9d855d276583b07575e5c4d9143a2f6826c6a9ebc0f309c9de3eadc0ed9538200eb0f583436a214717c334c0"
+            "url": "https://github.com/streetwriters/notesnook/releases/download/v2.6.13/notesnook_win_x64.exe#/dl.7z",
+            "hash": "sha512:cdaf749db48053348724690fdd0dc83348b7c889ab0c4b80dd1c9d8a51145da87037770d52c0390ca62c27f5a28008a90b58361a729bad64cb0fa61d5cb5d096"
         }
     },
     "pre_install": [
