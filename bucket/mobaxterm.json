@@ -1,13 +1,13 @@
 {
-    "version": "24.0",
+    "version": "24.1",
     "description": "Enhanced terminal for Windows with X11 server, tabbed SSH client, network tools and much more.",
     "homepage": "https://mobaxterm.mobatek.net/",
     "license": {
         "identifier": "Freeware",
         "url": "https://mobaxterm.mobatek.net/license.html"
     },
-    "url": "https://download.mobatek.net/2402024022512842/MobaXterm_Portable_v24.0.zip",
-    "hash": "bc737a78a7cb52457f19c28a616909f3790acaddd74a2bb534861c9f4bd0b464",
+    "url": "https://download.mobatek.net/2412024041614011/MobaXterm_Portable_v24.1.zip",
+    "hash": "1a75fe3bd766d62426f08723e4da49315f610a4c087938f2161d6a7511793303",
     "pre_install": [
         "    # Rename executable",
         "Get-ChildItem \"$dir\" 'mobaxterm*.exe' | Select-Object -First 1 | Rename-Item -NewName 'MobaXterm.exe'",
