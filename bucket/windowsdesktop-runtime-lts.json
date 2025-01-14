@@ -1,5 +1,5 @@
 {
-    "version": "8.0.11",
+    "version": "8.0.12",
     "description": "Microsoft .NET Desktop Runtime LTS (Long-term support)",
     "homepage": "https://dotnet.microsoft.com/download/dotnet",
     "license": {
@@ -9,12 +9,12 @@
     "notes": "You can now remove this installer with 'scoop uninstall windowsdesktop-runtime-lts'",
     "architecture": {
         "64bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/WindowsDesktop/8.0.11/windowsdesktop-runtime-8.0.11-win-x64.exe",
-            "hash": "sha512:fd6f0ac18e77f92b78c41aa2f3e19b9d1de6e63a0e4a517c897e68dafa5131f734d39f0b1dc9ea09a3b0949805d72ef6f82efb1f6a689ab055048705f43cff7b"
+            "url": "https://dotnetcli.azureedge.net/dotnet/WindowsDesktop/8.0.12/windowsdesktop-runtime-8.0.12-win-x64.exe",
+            "hash": "sha512:c5b6a2b5c38a8b2a4d4f096e6bb62ecd74ebfa039ce9d0e19b023099e364f29a1c256014b8995ca152b64a00c951feb2f93bf7d4c85eb70cdb30a209f4b1e17f"
         },
         "32bit": {
-            "url": "https://dotnetcli.azureedge.net/dotnet/WindowsDesktop/8.0.11/windowsdesktop-runtime-8.0.11-win-x86.exe",
-            "hash": "sha512:32d11f33394ea1662a23046c45c224d60b25897951072d00324f6a9a297960086e3b8c606018ef947f40b19b570f7335e18fe8481bcaf6edba4a349285be8186"
+            "url": "https://dotnetcli.azureedge.net/dotnet/WindowsDesktop/8.0.12/windowsdesktop-runtime-8.0.12-win-x86.exe",
+            "hash": "sha512:6d70f98c4257083dc0362bd0dded0ae02baaa54e53367227a4accb095c7c0962e5d47f7f933805e506909cbb58e8e3cd0e4983fad11bd11ece05207fa5a6c0ad"
         }
     },
     "pre_install": "if (!(is_admin)) { error 'Admin privileges are required.'; break }",
