@@ -1,13 +1,13 @@
 {
-    "version": "5.5.2",
+    "version": "5.5.3",
     "description": "A text editor for developers",
     "homepage": "http://www.pspad.com",
     "license": {
         "identifier": "Freeware",
         "url": "https://www.pspad.com/en/licence.php"
     },
-    "url": "https://www.pspad.com/files/pspad/pspad552en.zip",
-    "hash": "sha1:86d9f9c7b4fef235ba30ba180e63af479b522b59",
+    "url": "https://www.pspad.com/files/pspad/pspad553en.zip",
+    "hash": "sha1:b494926ca04281446b1ceff46cc75f876dcb0a9d",
     "bin": "PSPad.exe",
     "shortcuts": [
         [
